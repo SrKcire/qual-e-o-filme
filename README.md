@@ -17,6 +17,22 @@ Acertou no 1º frame = **6 pontos**, no 2º = 5, …, no 6º = 1. Errou tudo = 0
 
 O progresso e as estatísticas ficam salvos no navegador (`localStorage`).
 
+## Contas e perfis
+
+Jogar não exige conta. Quem entra (link de acesso por e-mail, sem senha) ganha:
+
+- **Perfil** com nome, sobrenome, apelido público (`@apelido`) e **avatar** montado no editor
+  (4 estilos do [DiceBear](https://www.dicebear.com): Aventureiro, Rabisco, Cartoon e Pixel).
+  O e-mail nunca é exibido para outros jogadores.
+- **Estatísticas na nuvem**: ao entrar, os dados do aparelho são somados aos da conta e passam a
+  sincronizar entre celular e computador.
+- **Excluir conta** a qualquer momento na tela de perfil (apaga perfil, estatísticas e resultados).
+
+O backend é o [Supabase](https://supabase.com). A estrutura do banco e as regras de acesso (RLS) ficam em
+[`supabase/migrations/`](supabase/migrations/) e são aplicadas automaticamente pela integração
+Supabase ↔ GitHub a cada push na `main`. A chave em [`src/lib/supabase.ts`](src/lib/supabase.ts) é a
+*publishable* (pública por natureza) — nunca coloque a *secret key* no código.
+
 ## Rodando localmente
 
 ```bash

@@ -3,6 +3,7 @@ import { ResultPanel } from '../components/ResultPanel'
 import { Round } from '../components/Round'
 import { StatsBar } from '../components/StatsBar'
 import { MAX_ATTEMPTS, dailyMovie, dailyNumber, msUntilMidnight, resultSquares, roundState, scoreFor, type Guess } from '../lib/game'
+import { recordDailyResult } from '../lib/cloud'
 import { load, save } from '../lib/storage'
 
 interface DailyProgress {
@@ -79,6 +80,7 @@ export function DailyMode() {
     setProgress({ day, guesses: next })
     const { finished, won } = roundState(next)
     if (!finished) return
+    recordDailyResult(day, next)
     const points = scoreFor(next)
     setStats((s) => {
       const distribution = [...s.distribution]

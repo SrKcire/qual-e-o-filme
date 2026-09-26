@@ -1,135 +1,61 @@
-import { useEffect, useState } from 'react'
-import { FrameViewer } from './components/FrameViewer'
-import { GuessInput } from './components/GuessInput'
-import { GuessList } from './components/GuessList'
-import { ResultPanel } from './components/ResultPanel'
-import { MAX_ATTEMPTS, frameUrl, isCorrectGuess, movies, scoreFor, shuffle, type Guess } from './lib/game'
+import { useState } from 'react'
 import { load, save } from './lib/storage'
+import { DailyMode } from './modes/DailyMode'
+import { FreeMode } from './modes/FreeMode'
+import { PartyMode } from './modes/PartyMode'
 
-interface Progress {
-  queue: number[]
-  position: number
-  guesses: Guess[]
-}
+const MODES = [
+  { id: 'daily', label: 'Filme do Dia', icon: '📅' },
+  { id: 'free', label: 'Livre', icon: '🎞️' },
+  { id: 'party', label: 'Festa', icon: '🎉' },
+] as const
 
-interface Stats {
-  played: number
-  totalScore: number
-  /** distribution[n] = quantas partidas terminaram com n pontos */
-  distribution: number[]
-}
+type Mode = (typeof MODES)[number]['id']
 
-const PROGRESS_KEY = 'qef:progress'
-const STATS_KEY = 'qef:stats'
-
-function newQueue(avoidFirst?: number) {
-  const queue = shuffle(movies.map((m) => m.id))
-  if (queue.length > 1 && queue[0] === avoidFirst) [queue[0], queue[1]] = [queue[1], queue[0]]
-  return queue
-}
-
-function initialProgress(): Progress {
-  const saved = load<Progress | null>(PROGRESS_KEY, null)
-  const ids = new Set(movies.map((m) => m.id))
-  // descarta progresso salvo se o catálogo mudou
-  if (saved && saved.queue.length === ids.size && saved.queue.every((id) => ids.has(id))) return saved
-  return { queue: newQueue(), position: 0, guesses: [] }
-}
-
-const emptyStats: Stats = { played: 0, totalScore: 0, distribution: Array(MAX_ATTEMPTS + 1).fill(0) }
+const MODE_KEY = 'qef:mode'
 
 export default function App() {
-  const [progress, setProgress] = useState(initialProgress)
-  const [stats, setStats] = useState(() => load(STATS_KEY, emptyStats))
-  const { queue, position, guesses } = progress
+  const [mode, setMode] = useState<Mode>(() => {
+    const saved = load<string>(MODE_KEY, 'daily')
+    return MODES.some((m) => m.id === saved) ? (saved as Mode) : 'daily'
+  })
 
-  const movie = movies.find((m) => m.id === queue[position])!
-  const won = guesses.some((g) => g.result === 'correct')
-  const finished = won || guesses.length >= MAX_ATTEMPTS
-  const revealed = finished ? MAX_ATTEMPTS : guesses.length + 1
-  const [viewing, setViewing] = useState(revealed - 1)
-  const score = scoreFor(guesses)
-
-  useEffect(() => save(PROGRESS_KEY, progress), [progress])
-  useEffect(() => save(STATS_KEY, stats), [stats])
-
-  // pré-carrega o próximo frame para a troca ser instantânea
-  useEffect(() => {
-    if (revealed < MAX_ATTEMPTS) new Image().src = frameUrl(movie.frames[revealed])
-  }, [movie, revealed])
-
-  function addGuess(guess: Guess) {
-    if (finished) return
-    const next = [...guesses, guess]
-    setProgress({ ...progress, guesses: next })
-    const nowFinished = guess.result === 'correct' || next.length >= MAX_ATTEMPTS
-    setViewing(nowFinished ? next.length - 1 : next.length)
-    if (nowFinished) {
-      const points = scoreFor(next)
-      setStats((s) => {
-        const distribution = [...s.distribution]
-        distribution[points]++
-        return { played: s.played + 1, totalScore: s.totalScore + points, distribution }
-      })
-    }
+  function choose(m: Mode) {
+    setMode(m)
+    save(MODE_KEY, m)
   }
-
-  function nextMovie() {
-    const atEnd = position + 1 >= queue.length
-    setProgress({
-      queue: atEnd ? newQueue(movie.id) : queue,
-      position: atEnd ? 0 : position + 1,
-      guesses: [],
-    })
-    setViewing(0)
-  }
-
-  const average = stats.played ? (stats.totalScore / stats.played).toFixed(1) : '–'
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-3xl flex-col gap-5 px-4 py-6">
-      <header className="flex flex-wrap items-end justify-between gap-2">
+      <header className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <h1 className="text-2xl font-black tracking-tight sm:text-3xl">
           🎬 Qual é o <span className="text-amber-400">Filme?</span>
         </h1>
-        <dl className="flex gap-4 text-sm text-zinc-400">
-          <div>
-            <dt className="inline">Pontos: </dt>
-            <dd className="inline font-semibold text-zinc-100">{stats.totalScore}</dd>
-          </div>
-          <div>
-            <dt className="inline">Partidas: </dt>
-            <dd className="inline font-semibold text-zinc-100">{stats.played}</dd>
-          </div>
-          <div>
-            <dt className="inline">Média: </dt>
-            <dd className="inline font-semibold text-zinc-100">{average}</dd>
-          </div>
-        </dl>
+        <nav className="flex rounded-xl bg-zinc-900 p-1 ring-1 ring-zinc-800" aria-label="Modo de jogo">
+          {MODES.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => choose(m.id)}
+              aria-current={mode === m.id ? 'page' : undefined}
+              className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${
+                mode === m.id ? 'bg-amber-400 text-zinc-950' : 'text-zinc-400 hover:text-zinc-100'
+              }`}
+            >
+              <span aria-hidden>{m.icon}</span> {m.label}
+            </button>
+          ))}
+        </nav>
       </header>
 
-      <FrameViewer frames={movie.frames} revealed={revealed} current={viewing} onSelect={setViewing} />
-
-      {finished ? (
-        <ResultPanel movie={movie} guesses={guesses} score={score} onNext={nextMovie} />
-      ) : (
-        <>
-          <p className="text-center text-sm text-zinc-400">
-            Tentativa <strong className="text-zinc-100">{guesses.length + 1}</strong> de {MAX_ATTEMPTS} · vale{' '}
-            <strong className="text-amber-300">{MAX_ATTEMPTS - guesses.length}</strong>{' '}
-            {MAX_ATTEMPTS - guesses.length === 1 ? 'ponto' : 'pontos'}
-          </p>
-          <GuessInput
-            onGuess={(text) => addGuess({ text, result: isCorrectGuess(movie, text) ? 'correct' : 'wrong' })}
-            onSkip={() => addGuess({ text: '', result: 'skip' })}
-          />
-        </>
-      )}
-
-      <GuessList guesses={guesses} />
+      <main>
+        {mode === 'daily' && <DailyMode />}
+        {mode === 'free' && <FreeMode />}
+        {mode === 'party' && <PartyMode />}
+      </main>
 
       <footer className="mt-auto pt-6 text-center text-xs text-zinc-600">
-        Filme {position + 1} de {queue.length} · Imagens:{' '}
+        Imagens:{' '}
         <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer" className="underline hover:text-zinc-400">
           TMDB
         </a>

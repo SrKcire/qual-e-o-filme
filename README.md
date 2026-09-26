@@ -5,6 +5,18 @@ Jogo de adivinhar o filme a partir de frames, inspirado no [Framed](https://fram
 Você tem **6 tentativas**. Cada erro (ou pulo) revela um frame novo e mais fácil.
 Acertou no 1º frame = **6 pontos**, no 2º = 5, …, no 6º = 1. Errou tudo = 0.
 
+**Jogue em: https://srkcire.github.io/qual-e-o-filme/**
+
+## Modos
+
+- **📅 Filme do Dia** — um filme por dia, igual para todo mundo (como o Wordle). Guarda sequência de
+  vitórias, recorde e a distribuição dos seus resultados. Vira à meia-noite no horário de quem joga.
+- **🎞️ Livre** — filmes em ordem aleatória, sem repetir até passar pelo catálogo inteiro.
+- **🎉 Festa** — de 2 a 8 jogadores revezando no mesmo aparelho, cada um com o seu filme por rodada.
+  Uma tela de "passe o aparelho" esconde o frame na troca de jogador. No fim, pódio e revanche.
+
+O progresso e as estatísticas ficam salvos no navegador (`localStorage`).
+
 ## Rodando localmente
 
 ```bash
@@ -43,7 +55,10 @@ npm run fetch-frames -- "o iluminado" "clube da luta" 13
 ```
 
 O script busca os filmes, pega 6 frames sem texto e salva no catálogo. Depois vale reordenar os frames
-à mão, do mais difícil para o mais fácil.
+à mão, do mais difícil para o mais fácil — e trocar os que forem arte de pôster em vez de cena do filme.
+
+> **Atenção:** o Filme do Dia é sorteado a partir do catálogo. Adicionar ou remover filmes muda a
+> sequência dos próximos dias (o desafio de hoje também pode mudar), então prefira fazer isso de uma vez.
 
 ## Publicação
 

@@ -1,26 +1,782 @@
 [
-  { "id": 603, "title": "Matrix", "originalTitle": "The Matrix", "year": 1999, "aliases": [],
-    "frames": ["lDqMDI3xpbB9UQRyeXfei0MXhqb.jpg", "tlm8UkiQsitc8rSuIAscQDCnP8d.jpg", "lrtSb1skJayPydZk0OSMAKjBOVe.jpg", "oMsxZEvz9a708d49b6UdZK1KAo5.jpg", "ncEsesgOJDNrTUED89hYbA117wo.jpg", "8K9qHeM6G6QjQN0C5XKFGvK5lzM.jpg"] },
-  { "id": 597, "title": "Titanic", "originalTitle": "Titanic", "year": 1997, "aliases": [],
-    "frames": ["As0zX43h3w6kD2NS4uVHu9HKdEh.jpg", "xXCuto8YVp5RFqBJ7yKmVmLOWpF.jpg", "xnHVX37XZEp33hhCbYlQFq7ux1J.jpg", "rzdPqYx7Um4FUZeD8wpXqjAUcEm.jpg", "4MS3PY7syZUULFGlujYeqQqnIoG.jpg", "sCzcYW9h55WcesOqA12cgEr9Exw.jpg"] },
-  { "id": 8587, "title": "O Rei Leão", "originalTitle": "The Lion King", "year": 1994, "aliases": ["Rei Leão"],
-    "frames": ["8aIvm8OaJISOpVTt7rMIh7X35G5.jpg", "bqFxtuGNsz30HTk5mzgGs8m9Po.jpg", "q00H8EqULYSK74lgevMkhmGGLHn.jpg", "6GF9uJs7AnbcJvyfoZyjZv063Oo.jpg", "wXsQvli6tWqja51pYxXNG1LFIGV.jpg", "wXfAvsPZqBDJ8U78F2IAzsUxtNh.jpg"] },
-  { "id": 329, "title": "Jurassic Park: O Parque dos Dinossauros", "originalTitle": "Jurassic Park", "year": 1993, "aliases": ["O Parque dos Dinossauros"],
-    "frames": ["mgjJ7FH4V3exsmoHwXrmsUhn0h1.jpg", "4SyDTF02R5BepqSdQmOaNCHObzF.jpg", "f082quUW2kAtZXFZVGEfhwacZoG.jpg", "o7LzVmlOSYc3EspyVMC9bsTTARc.jpg", "2Nhw5RdJXUZlHpbXqImtbvtqjdA.jpg", "alqZDg4DXBpNCVTzRPXe5zkkAXX.jpg"] },
-  { "id": 105, "title": "De Volta para o Futuro", "originalTitle": "Back to the Future", "year": 1985, "aliases": [],
-    "frames": ["i996T0lI1fGtFEowiH3V6eZthL0.jpg", "5bzPWQ2dFUl2aZKkp7ILJVVkRed.jpg", "2H2YYbn8wDzYXtak83Md6PAwMdp.jpg", "pZCLGHynFPOv8dve6u9waxknLth.jpg", "qskzmLTbarKnXDbo2HRj4NJ3vcW.jpg", "hxSB02ksqnkXY4hPGAXqgO2fL01.jpg"] },
-  { "id": 598, "title": "Cidade de Deus", "originalTitle": "Cidade de Deus", "year": 2002, "aliases": ["City of God"],
-    "frames": ["gfnXixcGC060QcG6JPxN6AMdVsq.jpg", "uvitbjFU4JqvMwIkMWHp69bmUzG.jpg", "rr0vFvjbAU7zaLjSRtUAxavH2bv.jpg", "5p3aTxtUtZHCHwYsuycutmxIhND.jpg", "1F5p9C8ORjkkzK3FhccWVTYfeSM.jpg", "dCi0Y946pO7QOPVgUBJQ6OToJMq.jpg"] },
-  { "id": 862, "title": "Toy Story: Um Mundo de Aventuras", "originalTitle": "Toy Story", "year": 1995, "aliases": [],
-    "frames": ["686F0CEPmI4ZXjFbWtIHQOBwnfI.jpg", "3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg", "bSoOThXLrbgtphS2eZjwy2xYwVt.jpg", "lxD5ak7BOoinRNehOCA85CQ8ubr.jpg", "8AqWECiUHnz1Crj69uB9vhiK9Le.jpg", "kIuGWAJ13pqmKADnQ6CzM95hj7Q.jpg"] },
-  { "id": 238, "title": "O Poderoso Chefão", "originalTitle": "The Godfather", "year": 1972, "aliases": ["Poderoso Chefão"],
-    "frames": ["wOMxE93W6KcZTuCeNUByNTSaLLt.jpg", "tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg", "ejdD20cdHNFAYAN2DlqPToXKyzx.jpg", "tmU7GeKVybMWFButWEGl2M4GeiP.jpg", "39rtAdg3yx6IDxRg0ZLXefv0aPY.jpg", "rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg"] },
-  { "id": 578, "title": "Tubarão", "originalTitle": "Jaws", "year": 1975, "aliases": [],
-    "frames": ["iD2XVowFgHngYGamCAdq2T44gMr.jpg", "i1yf91svRHX45l9BXL8rVFzLoPH.jpg", "kJMLPj5enrZti8udTVeULlM70mz.jpg", "xgU3KkqiME9pGe5gGCNpUYkoSWg.jpg", "3nYlM34QhzdtAvWRV5bN4nLtnTc.jpg", "lDxGguxqFy1ch8XElYaNXqw0CuN.jpg"] },
-  { "id": 671, "title": "Harry Potter e a Pedra Filosofal", "originalTitle": "Harry Potter and the Philosopher's Stone", "year": 2001, "aliases": ["Harry Potter and the Sorcerer's Stone"],
-    "frames": ["4rtsbE9aQ1qw4gv7yYwaNYfWFoS.jpg", "lvOLivVeX3DVVcwfVkxKf0R22D8.jpg", "hziiv14OpD73u9gAak4XDDfBKa2.jpg", "bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg", "5jkE2SzR5uR2egEb1rRhF22JyWN.jpg", "4GlSMUpzSd3cliYGFJVziSDX53S.jpg"] },
-  { "id": 680, "title": "Pulp Fiction: Tempo de Violência", "originalTitle": "Pulp Fiction", "year": 1994, "aliases": [],
-    "frames": ["tptjnB2LDbuUWya9Cx5sQtv5hqb.jpg", "suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg", "9pGM43a9VmXxwIxmhJoiDkcB2hT.jpg", "cOGysF4SXauEKz18mFGmkZW6O2T.jpg", "w7RDIgQM6bLT7JXtH4iUQd3Iwxm.jpg", "52StM7zDmcjeKxWkW55X5LtoLQi.jpg"] },
-  { "id": 157336, "title": "Interestelar", "originalTitle": "Interstellar", "year": 2014, "aliases": [],
-    "frames": ["p6wYy2mUsOwi4TalNAk46ft4sVJ.jpg", "8sNiAPPYU14PUepFNeSNGUTiHW.jpg", "vgnoBSVzWAV9sNQUORaDGvDp7wx.jpg", "5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg", "xJHokMbljvjADYdit5fK5VQsXEG.jpg", "wQxPlS65wgy6Ik7N80bsMpAkjyf.jpg"] }
+  {
+    "id": 603,
+    "title": "Matrix",
+    "originalTitle": "The Matrix",
+    "year": 1999,
+    "aliases": [],
+    "frames": [
+      "lrtSb1skJayPydZk0OSMAKjBOVe.jpg",
+      "oMsxZEvz9a708d49b6UdZK1KAo5.jpg",
+      "waCRuAW5ocONRehP556vPexVXA9.jpg",
+      "8K9qHeM6G6QjQN0C5XKFGvK5lzM.jpg",
+      "bFrAd2tAgmuS81EOSrNobqZ0eks.jpg",
+      "oCkOhekO65sH5o3UnnWPStYHEnv.jpg"
+    ]
+  },
+  {
+    "id": 597,
+    "title": "Titanic",
+    "originalTitle": "Titanic",
+    "year": 1997,
+    "aliases": [],
+    "frames": [
+      "iNPXPAEfdaVlf1NU0W0ec5716UE.jpg",
+      "wOFY2xA3D3VHi3G6DPtrXXhPrqQ.jpg",
+      "sDH1LkdFOkQmTJaF1sIIniQyFOk.jpg",
+      "qBChUbS8ksbJoPTfZpogsnxG5tY.jpg",
+      "4MS3PY7syZUULFGlujYeqQqnIoG.jpg",
+      "AjoaBmNAmEPkAcQyhOk08u0mCcu.jpg"
+    ]
+  },
+  {
+    "id": 8587,
+    "title": "O Rei Leão",
+    "originalTitle": "The Lion King",
+    "year": 1994,
+    "aliases": [
+      "Rei Leão"
+    ],
+    "frames": [
+      "zoBSVPbTY3rVBLIYJE2yYrsaX0s.jpg",
+      "wXfAvsPZqBDJ8U78F2IAzsUxtNh.jpg",
+      "wXsQvli6tWqja51pYxXNG1LFIGV.jpg",
+      "gA2oBEXt25EVmocBL2a1dHzAzCD.jpg",
+      "bqFxtuGNsz30HTk5mzgGs8m9Po.jpg",
+      "kAZ0AtzFlsP9tikLevnz2x84QA8.jpg"
+    ]
+  },
+  {
+    "id": 329,
+    "title": "Jurassic Park: O Parque dos Dinossauros",
+    "originalTitle": "Jurassic Park",
+    "year": 1993,
+    "aliases": [
+      "O Parque dos Dinossauros"
+    ],
+    "frames": [
+      "86FXPjGWjrqKmmLszHow0KbI0Gd.jpg",
+      "f082quUW2kAtZXFZVGEfhwacZoG.jpg",
+      "9kqA5fe1V2yqCBudUMUTmXbyy3Y.jpg",
+      "79bJL9ydAMYVltuNTt4VhxORqIz.jpg",
+      "o7LzVmlOSYc3EspyVMC9bsTTARc.jpg",
+      "4SyDTF02R5BepqSdQmOaNCHObzF.jpg"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "De Volta para o Futuro",
+    "originalTitle": "Back to the Future",
+    "year": 1985,
+    "aliases": [],
+    "frames": [
+      "wY7c1cGHIgniVR0LhGW9NMqEjb5.jpg",
+      "cSjoKG6CNQUPArytccI0FmZ6I63.jpg",
+      "mqNU1BytVJnrmMyxalqs9F0vgBf.jpg",
+      "QCqjm2JMaN6qptzMjmPuWXsMFA.jpg",
+      "mh2f2iwNgoGwDzjmjspszW6oesU.jpg",
+      "qskzmLTbarKnXDbo2HRj4NJ3vcW.jpg"
+    ]
+  },
+  {
+    "id": 598,
+    "title": "Cidade de Deus",
+    "originalTitle": "City of God",
+    "year": 2002,
+    "aliases": [],
+    "frames": [
+      "61ybf8KA2ZmH7wFvKtJtHGrjlWX.jpg",
+      "tlGreC0Cn1OGFhDYmC1Vl0MWVkn.jpg",
+      "5p3aTxtUtZHCHwYsuycutmxIhND.jpg",
+      "6NWJLzckS3QR4g1mZacjQHZysVZ.jpg",
+      "rr0vFvjbAU7zaLjSRtUAxavH2bv.jpg",
+      "uvitbjFU4JqvMwIkMWHp69bmUzG.jpg"
+    ]
+  },
+  {
+    "id": 862,
+    "title": "Toy Story: Um Mundo de Aventuras",
+    "originalTitle": "Toy Story",
+    "year": 1995,
+    "aliases": [],
+    "frames": [
+      "kIuGWAJ13pqmKADnQ6CzM95hj7Q.jpg",
+      "lsBVZG2y2reRzVi9aTQRWHk9Voj.jpg",
+      "xEIGPk5QTxD9E5knNFSXggNxEAP.jpg",
+      "8AqWECiUHnz1Crj69uB9vhiK9Le.jpg",
+      "1pFGRMwuVPcbk0fHeV5IFCj7w8W.jpg",
+      "3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg"
+    ]
+  },
+  {
+    "id": 238,
+    "title": "O Poderoso Chefão",
+    "originalTitle": "The Godfather",
+    "year": 1972,
+    "aliases": [
+      "Poderoso Chefão"
+    ],
+    "frames": [
+      "htuuuEwAvDVECMpb0ltLLyZyDDt.jpg",
+      "7VrRna8S3x6xbijooeBmxqvHXiu.jpg",
+      "41xIKcLiM5ryfz4C9sZFcBOJGsK.jpg",
+      "rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
+      "ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+      "39rtAdg3yx6IDxRg0ZLXefv0aPY.jpg"
+    ]
+  },
+  {
+    "id": 578,
+    "title": "Tubarão",
+    "originalTitle": "Jaws",
+    "year": 1975,
+    "aliases": [],
+    "frames": [
+      "cgLH3X6pZTlX1G77ONopZPldrsD.jpg",
+      "xGRVPFSP04aIdk2BAoeN6RklvNQ.jpg",
+      "sPSM46nQEgt8ynosttMEXbBAbEO.jpg",
+      "kJMLPj5enrZti8udTVeULlM70mz.jpg",
+      "bW6GHF3Yg9fSsJGlRVHXlGY8vaM.jpg",
+      "i1yf91svRHX45l9BXL8rVFzLoPH.jpg"
+    ]
+  },
+  {
+    "id": 671,
+    "title": "Harry Potter e a Pedra Filosofal",
+    "originalTitle": "Harry Potter and the Philosopher's Stone",
+    "year": 2001,
+    "aliases": [
+      "Harry Potter and the Sorcerer's Stone",
+      "Harry Potter"
+    ],
+    "frames": [
+      "pajKyahlPPggk0k5LiA2v4kwWqn.jpg",
+      "5jkE2SzR5uR2egEb1rRhF22JyWN.jpg",
+      "lvOLivVeX3DVVcwfVkxKf0R22D8.jpg",
+      "4GlSMUpzSd3cliYGFJVziSDX53S.jpg",
+      "pZIiPOoNhhzVpBuVEpDK7vbBz4l.jpg",
+      "bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg"
+    ]
+  },
+  {
+    "id": 680,
+    "title": "Pulp Fiction: Tempo de Violência",
+    "originalTitle": "Pulp Fiction",
+    "year": 1994,
+    "aliases": [],
+    "frames": [
+      "eDMZmfnH50DDboUxTRnOYYpE9aY.jpg",
+      "w7RDIgQM6bLT7JXtH4iUQd3Iwxm.jpg",
+      "19joFuQ6YTkcru4rvOf8b9CIjjg.jpg",
+      "tfaY1QVIhkr4ft1eUk1UP2ZdfCC.jpg",
+      "9pGM43a9VmXxwIxmhJoiDkcB2hT.jpg",
+      "suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg"
+    ]
+  },
+  {
+    "id": 157336,
+    "title": "Interestelar",
+    "originalTitle": "Interstellar",
+    "year": 2014,
+    "aliases": [],
+    "frames": [
+      "5C3RriLKkIAQtQMx85JLtu4rVI2.jpg",
+      "5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg",
+      "9mmkq59uRuJWDFz9UHeX5ATNJYf.jpg",
+      "rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+      "pbrkL804c8yAv3zBZR4QPEafpAR.jpg",
+      "p6wYy2mUsOwi4TalNAk46ft4sVJ.jpg"
+    ]
+  },
+  {
+    "id": 120,
+    "title": "O Senhor dos Anéis: A Sociedade do Anel",
+    "originalTitle": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "aliases": [
+      "Senhor dos Anéis",
+      "A Sociedade do Anel"
+    ],
+    "frames": [
+      "dUVbWINfRMGojGZRcO6GF1Z2nV8.jpg",
+      "zzIdXP769uYxQq6rK9plfeoVdTo.jpg",
+      "ssKTgmA1S7GLiPe83tVoitk7Nqd.jpg",
+      "skVTWsoQvFGLUnOo1Wv3coAsARw.jpg",
+      "oiwc338EoBgS4sEI2ixAny4KQKg.jpg",
+      "vRQnzOn4HjIMX4LBq9nHhFXbsSu.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Star Wars: Uma Nova Esperança",
+    "originalTitle": "Star Wars",
+    "year": 1977,
+    "aliases": [
+      "Guerra nas Estrelas",
+      "Uma Nova Esperança",
+      "Star Wars: A New Hope"
+    ],
+    "frames": [
+      "4qCqAdHcNKeAHcK8tJ8wNJZa9cx.jpg",
+      "jBFxXKCrViA88hhO59fDx0Av4P.jpg",
+      "yrdAamkeqXHm0UYukk8xgoCvc7G.jpg",
+      "3H94YlnYWVLKQKEnfTBKvrCmHmt.jpg",
+      "jNjT5y95BToczcxgVPl1NBB7goY.jpg",
+      "yUiXA68FfQeA8cRBhd0Ao0jIRZt.jpg"
+    ]
+  },
+  {
+    "id": 694,
+    "title": "O Iluminado",
+    "originalTitle": "The Shining",
+    "year": 1980,
+    "aliases": [],
+    "frames": [
+      "8BQWnQUpfg46uw1ZGC6cLQzEMe2.jpg",
+      "dQMjySqD3rC8hSueCw3inXRJmIU.jpg",
+      "3JMGoU8P2dchWDKfcvdDNMKsJ5u.jpg",
+      "zvdaBouUe9jlDYO9hprLPE93EoZ.jpg",
+      "AdKA2F1SzYPhSZdEbjH1Zh75UVQ.jpg",
+      "mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg"
+    ]
+  },
+  {
+    "id": 550,
+    "title": "Clube da Luta",
+    "originalTitle": "Fight Club",
+    "year": 1999,
+    "aliases": [],
+    "frames": [
+      "c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+      "8iVyhmjzUbvAGppkdCZPiyEHSoF.jpg",
+      "mD7Q7NynkKKdbhXxcbk3OjY7GM7.jpg",
+      "52AfXWuXCHn3UjD17rBruA9f5qb.jpg",
+      "rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg",
+      "yrN6gon5NG6t7Lgh05byChFSZem.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Forrest Gump: O Contador de Histórias",
+    "originalTitle": "Forrest Gump",
+    "year": 1994,
+    "aliases": [],
+    "frames": [
+      "7c9UVPPiTPltouxRVY6N9uugaVA.jpg",
+      "mzfx54nfDPTUXZOG48u4LaEheDy.jpg",
+      "tlEFuIlaxRPXIYVHXbOSAMCfWqk.jpg",
+      "66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
+      "6djvPNOcGb3qDXTp8JPoc14bh1n.jpg",
+      "8uWbSjUky6NiJnD3Typz6ZN0f9w.jpg"
+    ]
+  },
+  {
+    "id": 446159,
+    "title": "Bacurau",
+    "originalTitle": "Bacurau",
+    "year": 2019,
+    "aliases": [],
+    "frames": [
+      "cbn6GvLxvszTGz1nDuXEeZDEzQM.jpg",
+      "ju8O2WUkm83YcTEfGBqMQIpUT2F.jpg",
+      "wiIILYNkmXIuoO7r4DaIHoEEdmQ.jpg",
+      "7Xi4VWTh6ZF9JMfAjlACP6qftJn.jpg",
+      "lIEBRfoMdDWZDf4jtAGHRgMCo34.jpg",
+      "8UcfX4Ru550l7PdPia4zPoowWnr.jpg"
+    ]
+  },
+  {
+    "id": 310569,
+    "title": "Que Horas Ela Volta?",
+    "originalTitle": "The Second Mother",
+    "year": 2015,
+    "aliases": [],
+    "frames": [
+      "irCDusNNtQiBU9cMjY7c82btR9Z.jpg",
+      "qcJx3vYX9eLu1KBLE2lotqjwwZP.jpg",
+      "83GRZSqB4CXjdL0pzfevo1hv73O.jpg",
+      "nE4FiaqpI4zdOUKape6msoEM5Dx.jpg",
+      "f8XlmD7OCC09hmY9pdV1KEySgog.jpg",
+      "47zznnFceNHsQCyVPMCsKEONJjc.jpg"
+    ]
+  },
+  {
+    "id": 7347,
+    "title": "Tropa de Elite",
+    "originalTitle": "Elite Squad",
+    "year": 2007,
+    "aliases": [],
+    "frames": [
+      "qScq6ZNmLVQ9BovqEDLJr7lVdTV.jpg",
+      "hdYBWhJLXrWJwPrNH1d34nKR5MU.jpg",
+      "wQivPkRjRwDsUk9NL2H5F14GF8q.jpg",
+      "o0lBoLMYJtkFgDOTAwWmYIWHdD9.jpg",
+      "5sHJwXD8eR30WN8HxmQV6mEoHrw.jpg",
+      "jERxuINN7xlBNu7AfYyjypqjvy2.jpg"
+    ]
+  },
+  {
+    "id": 666,
+    "title": "Central do Brasil",
+    "originalTitle": "Central Station",
+    "year": 1998,
+    "aliases": [],
+    "frames": [
+      "ilLlO2h2xBYvmFPSr4n5XzqTTZY.jpg",
+      "lrLIy9OFRQg4VkhrCyolfNXJEUH.jpg",
+      "ioskzc84R9D5Z9hOK4oDJNPt1VN.jpg",
+      "gfFedpWPslU7Dzp9eq9UErLghYp.jpg",
+      "dw1QzmQoiBhmqFYB7HX1yIqRNOg.jpg",
+      "rMsrUSnI5uZ0r9dhFQ6Z52pVCMf.jpg"
+    ]
+  },
+  {
+    "id": 601,
+    "title": "E.T.: O Extraterrestre",
+    "originalTitle": "E.T. the Extra-Terrestrial",
+    "year": 1982,
+    "aliases": [
+      "E.T.",
+      "ET"
+    ],
+    "frames": [
+      "jS66oVwfHcBIcbdV0lY8UZIXsjN.jpg",
+      "1jVEONg10d7lJunwl9GAS6tUGkB.jpg",
+      "hI4ea9G5fNCKhlh6DcgpP9du9No.jpg",
+      "7p6Mh9JGzAbf6h9QX3J1QFMutkK.jpg",
+      "pkqGWRpZHoRpXqkqqaIn1eW5N6m.jpg",
+      "mXLVA0YL6tcXi6SJSuAh9ONXFj5.jpg"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Indiana Jones e os Caçadores da Arca Perdida",
+    "originalTitle": "Raiders of the Lost Ark",
+    "year": 1981,
+    "aliases": [
+      "Os Caçadores da Arca Perdida",
+      "Indiana Jones"
+    ],
+    "frames": [
+      "gpQyXHPN6NDRzxGZiMv0xrNYbIr.jpg",
+      "4D2Br6NBmHqRAau4Fv9KDIcDp0z.jpg",
+      "tpanGEX9LExRqkOHwD3dwGzEEHE.jpg",
+      "5VtsgHqFZCTHBFlv9U5khppiG2O.jpg",
+      "eFTyrhoLUQinahhKu36r1HI49Xr.jpg",
+      "f3XrGXd34Ru7o39LUwWvk5igEV7.jpg"
+    ]
+  },
+  {
+    "id": 24428,
+    "title": "Os Vingadores",
+    "originalTitle": "The Avengers",
+    "year": 2012,
+    "aliases": [
+      "Vingadores",
+      "Os Vingadores: The Avengers"
+    ],
+    "frames": [
+      "207Vm2do4exUdK4oawzQJ20CIGN.jpg",
+      "yX8IlnW6qgJO50uSrd565Ni3KTj.jpg",
+      "86IbFy98QjRIqg6WanKYb9tXNbJ.jpg",
+      "gHLs7Fy3DzLmLsD4lmfqL55KGcl.jpg",
+      "kwUQFeFXOOpgloMgZaadhzkbTI4.jpg",
+      "kqn3odoKHHMnwbYKOXHQYFdk9PP.jpg"
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Batman: O Cavaleiro das Trevas",
+    "originalTitle": "The Dark Knight",
+    "year": 2008,
+    "aliases": [
+      "O Cavaleiro das Trevas"
+    ],
+    "frames": [
+      "cfT29Im5VDvjE0RpyKOSdCKZal7.jpg",
+      "6SfX1p5G4EEEDnEulFJeSxgbtSV.jpg",
+      "plDp52MirFHc2PMJRMNWoG0kfr3.jpg",
+      "nMKdUUepR0i5zn0y1T4CsSB5chy.jpg",
+      "x5f2uTfw0Pqc5QI4ch5AHICee2o.jpg",
+      "9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Procurando Nemo",
+    "originalTitle": "Finding Nemo",
+    "year": 2003,
+    "aliases": [],
+    "frames": [
+      "dFYguAfeVt19qAbzJ5mArn7DEJw.jpg",
+      "eCynaAOgYYiw5yN5lBwz3IxqvaW.jpg",
+      "bvpI11RJbE6lHSWCrhvNC1S1MtO.jpg",
+      "h3uqFk7sZRJvLZDdLiFB9qwbL07.jpg",
+      "jpnwNUmph2nFzLYXhD91Xe8DYhd.jpg",
+      "rSGmnKoHuxyjbYY0zIML7NVRy8o.jpg"
+    ]
+  },
+  {
+    "id": 808,
+    "title": "Shrek",
+    "originalTitle": "Shrek",
+    "year": 2001,
+    "aliases": [],
+    "frames": [
+      "2Biv1mSzaaxWOqvcnDZn4GcYEAb.jpg",
+      "aXFKBfPvZa4NFmqyvG8sno19A0k.jpg",
+      "mZAwhoGH8isko20oE7xIQeXLe13.jpg",
+      "2l5UHZBcp9cx1PwKLdisJ0gV9jB.jpg",
+      "mh7ykIfHDwTwPmhEhbV7yJN8SnB.jpg",
+      "w0eKUOEog2ImtktCHAMUZws8qif.jpg"
+    ]
+  },
+  {
+    "id": 109445,
+    "title": "Frozen: Uma Aventura Congelante",
+    "originalTitle": "Frozen",
+    "year": 2013,
+    "aliases": [],
+    "frames": [
+      "fydUcbkqLyESCFa9U5XKqi8dIVj.jpg",
+      "vfkUC9sV1LoReuz1QuTIKTj8XpK.jpg",
+      "4DYzHVzLtYcRWt9r8UletcyaMu8.jpg",
+      "zzAIBGWIsXd6CfquFIkhEAzuYf.jpg",
+      "8wljpESP1YTtC0wWRK4eVIPcD3B.jpg",
+      "wrQn30V7at7JibFc5GqeThBfvL4.jpg"
+    ]
+  },
+  {
+    "id": 14160,
+    "title": "Up: Altas Aventuras",
+    "originalTitle": "Up",
+    "year": 2009,
+    "aliases": [],
+    "frames": [
+      "6DBT64kMh4UAendMPfykMGMMt4W.jpg",
+      "mH9IXGi80ySUDkxl7uwsKNwqcyC.jpg",
+      "qz0C4Dd36TdiO5BVPMhemUNQsL2.jpg",
+      "7UIP0uLzv5mXNYUasLbjDV6Mawd.jpg",
+      "oMH0n8vvCuNVBueN2balBEpm9FY.jpg",
+      "vmU4aluI4SYiPIYC5ghqXAu29tK.jpg"
+    ]
+  },
+  {
+    "id": 150540,
+    "title": "Divertida Mente",
+    "originalTitle": "Inside Out",
+    "year": 2015,
+    "aliases": [],
+    "frames": [
+      "okJXzeIpbdx7q8rQjJwBNr8VTEk.jpg",
+      "j29ekbcLpBvxnGk6LjdTc2EI5SA.jpg",
+      "58R3IxvO1vvKmXO24L8UyPP15QE.jpg",
+      "2IwDbObOTG0Qc2YIK6lXa1wQ4xe.jpg",
+      "8Wi6j7zNs1Z1j2JPCt5iFBP0IvN.jpg",
+      "jJKZaTBNenlFclQyjrnvzkRmvWE.jpg"
+    ]
+  },
+  {
+    "id": 27205,
+    "title": "A Origem",
+    "originalTitle": "Inception",
+    "year": 2010,
+    "aliases": [],
+    "frames": [
+      "koYANShm411GCCBwhm5lN96RfBs.jpg",
+      "56tSqd1kN6nU6sI1lfHO0p6mTS3.jpg",
+      "ztZ4vw151mw04Bg6rqJLQGBAmvn.jpg",
+      "gqby0RhyehP3uRrzmdyUZ0CgPPe.jpg",
+      "uKc498Sa5V8UTfez75P7EM8Blxp.jpg",
+      "28kKbSUvUz6P5RE1AuMJMO7IMfK.jpg"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Gladiador",
+    "originalTitle": "Gladiator",
+    "year": 2000,
+    "aliases": [],
+    "frames": [
+      "hND7xAaxxBgaIspp9iMsaEXOSTz.jpg",
+      "qC2J4aSe6NziW3s6fQNqse7RFf7.jpg",
+      "jWXpjDEmfL8b5i3ZdbNSVbRa0Q9.jpg",
+      "aZtwH3RQ0L8jbInxr7OSc9tlGMJ.jpg",
+      "jhk6D8pim3yaByu1801kMoxXFaX.jpg",
+      "swpjSgGmBCx6QgfO4rgv5vBzqHL.jpg"
+    ]
+  },
+  {
+    "id": 280,
+    "title": "O Exterminador do Futuro 2: O Julgamento Final",
+    "originalTitle": "Terminator 2: Judgment Day",
+    "year": 1991,
+    "aliases": [
+      "O Exterminador do Futuro 2",
+      "Exterminador do Futuro 2",
+      "Terminator 2"
+    ],
+    "frames": [
+      "diynPY0YqR4NDVvy3vBliTEaDVC.jpg",
+      "9XGsojvtszYM1tnh6gERmOa29De.jpg",
+      "eTIY2LO5cDclxgKtCHuvIKdF3c3.jpg",
+      "xKb6mtdfI5Qsggc44Hr9CCUDvaj.jpg",
+      "tLbmjVNul71s03FQ5fCjzcSG0cN.jpg",
+      "izkMjmhauFx9DjoBQqM5sM5WAwE.jpg"
+    ]
+  },
+  {
+    "id": 348,
+    "title": "Alien: O Oitavo Passageiro",
+    "originalTitle": "Alien",
+    "year": 1979,
+    "aliases": [
+      "O Oitavo Passageiro"
+    ],
+    "frames": [
+      "zUYFrUA9s9kmE8ngDm3NsVRXtn7.jpg",
+      "3epzWQQbtQWWY8Lq8tJ0GTrhjls.jpg",
+      "zo1X8fCK0E6EQIH5mzkLqNwgXHz.jpg",
+      "3BNbh8ODH68JRLEc4YveMHuTcH1.jpg",
+      "7JvTZ1SJGnBUBLShQDtkrz89Ocs.jpg",
+      "cEobq5QrnOJjO6giDs8q4RxmMKh.jpg"
+    ]
+  },
+  {
+    "id": 620,
+    "title": "Os Caça-Fantasmas",
+    "originalTitle": "Ghostbusters",
+    "year": 1984,
+    "aliases": [
+      "Caça-Fantasmas"
+    ],
+    "frames": [
+      "dbYJuyYn6rH51ejoMFi2Ryy2Xod.jpg",
+      "xqnA1bebPXRJDExrOhkrJUtenQs.jpg",
+      "1eb1dOsqyWXJ9KtzIYeDDzSr9Xg.jpg",
+      "w0BCAW6TICOJovqiqsoKPl0Wctz.jpg",
+      "hlL8qH5wpYqwOWckK40u4ij0YMW.jpg",
+      "sTdZyDfjbUT5ETwHNbMQ3tHlCx5.jpg"
+    ]
+  },
+  {
+    "id": 771,
+    "title": "Esqueceram de Mim",
+    "originalTitle": "Home Alone",
+    "year": 1990,
+    "aliases": [],
+    "frames": [
+      "tERcRxFNJNkKokjBcWjKt91kmj7.jpg",
+      "vmz7olsSCLkrcXA3l58wLsSVPHp.jpg",
+      "6uLhSLXzB1ooJ3522ydrBZ2Hh0W.jpg",
+      "vaVaNrscmsG8CUKYxiwZGFNqGJo.jpg",
+      "jEZ0APg9Lg0uiJJkyPThlgyVHEh.jpg",
+      "en9bAOhdPXZJfx2xTf1WL5d1T5v.jpg"
+    ]
+  },
+  {
+    "id": 76341,
+    "title": "Mad Max: Estrada da Fúria",
+    "originalTitle": "Mad Max: Fury Road",
+    "year": 2015,
+    "aliases": [
+      "Mad Max"
+    ],
+    "frames": [
+      "r80uNXoxohX0I4J2h0wMhC8LWZ6.jpg",
+      "kPEM4EA4boAWdXIZ3B3SZD2hn6g.jpg",
+      "uT895WNwm0aIJRtGizcQhrejWUo.jpg",
+      "hrYbZY9HaGMlEQsUeEx2lu3vWPy.jpg",
+      "8yACFuo4OaIiKr9hHFlmPcGalKx.jpg",
+      "3wH79ejsQwghWDL9b5VBhOPfAmp.jpg"
+    ]
+  },
+  {
+    "id": 496243,
+    "title": "Parasita",
+    "originalTitle": "Parasite",
+    "year": 2019,
+    "aliases": [],
+    "frames": [
+      "xOXIXRH6F2CDeEPwVSBe6y2v25V.jpg",
+      "uG3m6jBwU8jUkt0jbUOj8Vb2Y11.jpg",
+      "25tz24hlrqAbjhpHx1FhmfPH8Qf.jpg",
+      "ny5aCtglk2kceGAuAdiyqbhBBAf.jpg",
+      "p0giX7IG8hXv6lr1KE3jFn0VqXA.jpg",
+      "TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"
+    ]
+  },
+  {
+    "id": 129,
+    "title": "A Viagem de Chihiro",
+    "originalTitle": "Spirited Away",
+    "year": 2001,
+    "aliases": [],
+    "frames": [
+      "hXd2cgvvVh1EzSxuyNysiLErjVM.jpg",
+      "hZth9NCeXvvO7Xi98d8q34e1Ier.jpg",
+      "bVggfCvAPnFalIctxgpaCRTF97z.jpg",
+      "eyaygChVcUyv2gOVAJl8OUwoYm2.jpg",
+      "m4TUa2ciEWSlk37rOsjiSIvZDXE.jpg",
+      "dyJvKsNs2KP8qQnAXbRwDjblViy.jpg"
+    ]
+  },
+  {
+    "id": 475557,
+    "title": "Coringa",
+    "originalTitle": "Joker",
+    "year": 2019,
+    "aliases": [],
+    "frames": [
+      "r0kZNywAeN6Ar75rxDqLlTP5RiJ.jpg",
+      "gZWl93sf8AxavYpVT1Un6EF3oCj.jpg",
+      "xWUHCD67fcbEZw5yMrdOnRyd5WR.jpg",
+      "n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
+      "hO7KbdvGOtDdeg0W4Y5nKEHeDDh.jpg",
+      "rlay2M5QYvi6igbGcFjq8jxeusY.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Kill Bill: Volume 1",
+    "originalTitle": "Kill Bill: Vol. 1",
+    "year": 2003,
+    "aliases": [
+      "Kill Bill"
+    ],
+    "frames": [
+      "4BOwSKPwtPDCkTKqlJHAZDS6X9g.jpg",
+      "pCzubBRvlhj0aXfDNyKVNG6t54o.jpg",
+      "gPA8Th4CyuL5IeTzHE2THkxihkU.jpg",
+      "pcXvjjMOacxXJDqAaZQH26UKn1C.jpg",
+      "4nV8HonU5h8NyvF6sJX4q1PYtt9.jpg",
+      "lVy5Zqcty2NfemqKYbVJfdg44rK.jpg"
+    ]
+  },
+  {
+    "id": 274,
+    "title": "O Silêncio dos Inocentes",
+    "originalTitle": "The Silence of the Lambs",
+    "year": 1991,
+    "aliases": [],
+    "frames": [
+      "dqRrhzFPIyWgeVGmoZeaAoWtn0C.jpg",
+      "5EqT0WyG7yYs8v7GdoS4R9P75Gz.jpg",
+      "pI9B4wppGflpsOD2T6rxgC5Clmz.jpg",
+      "mbOx1wxMLikzwWUO9TKAcFIy6op.jpg",
+      "lDJx0ZKbfYbGoe8mwWmVKSQr0ub.jpg",
+      "mW2hISHs00yihyYQBqahGYoCcHy.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Piratas do Caribe: A Maldição do Pérola Negra",
+    "originalTitle": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "year": 2003,
+    "aliases": [
+      "Piratas do Caribe",
+      "A Maldição do Pérola Negra"
+    ],
+    "frames": [
+      "nr6SuKESwEPZnExvxSzQczF1iBt.jpg",
+      "hLh9RX3wUqXp3JTKZHtnQhhsGGF.jpg",
+      "yZ5p8TMj44LQ3qvRnAOymyT9EQ9.jpg",
+      "t4MLo3mieGsmeDJBRfDCUavRTdw.jpg",
+      "jySUVUpTwi3hMNXSKbNj7XXElPy.jpg",
+      "AkA5kXW6WxQT5cub0eRdSflTbpy.jpg"
+    ]
+  },
+  {
+    "id": 9806,
+    "title": "Os Incríveis",
+    "originalTitle": "The Incredibles",
+    "year": 2004,
+    "aliases": [],
+    "frames": [
+      "oj5aJQ29VB8SWljB5dhgeztDz3d.jpg",
+      "s9mdsiIl9PpMd2JJwbJtGAHWBUQ.jpg",
+      "1wgJIfxabXiRH7PJWk2UzoT53RG.jpg",
+      "h138DP62gGqPV7sxCnIPbTMh3a6.jpg",
+      "AtXtk99bZQb4L3oxNjpC3u9HzQw.jpg",
+      "lxwzY9vNwjDgxWKt3zZ6zcU6rEJ.jpg"
+    ]
+  },
+  {
+    "id": 19995,
+    "title": "Avatar",
+    "originalTitle": "Avatar",
+    "year": 2009,
+    "aliases": [],
+    "frames": [
+      "xg8QMKgG0NgAIVJQZD4X2scenxu.jpg",
+      "bhdqWOXsDSNGTokJiTGCSr98XIC.jpg",
+      "Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg",
+      "jlQJDD0L5ZojjlS0KYnApdO0n19.jpg",
+      "jVOFaJx0TecMlGHzbAc9sHDgOXg.jpg",
+      "8I37NtDffNV7AZlDa7uDvvqhovU.jpg"
+    ]
+  },
+  {
+    "id": 346698,
+    "title": "Barbie",
+    "originalTitle": "Barbie",
+    "year": 2023,
+    "aliases": [],
+    "frames": [
+      "4806moKxI5hCKmQz8TcQC0Hczfb.jpg",
+      "mbYTRO33LJAgpCMrIn9ibiWHbMH.jpg",
+      "fRyYKQdsXIjw26MendWxpWmvnBs.jpg",
+      "iGdHtZBjpBkmSAgkvUeniIfI8ME.jpg",
+      "3N5QNUqS76GFYNoEayfkkJyAyTN.jpg",
+      "tTfnd2VrlaZJSBD9HUbtSF3CqPJ.jpg"
+    ]
+  },
+  {
+    "id": 438631,
+    "title": "Duna",
+    "originalTitle": "Dune",
+    "year": 2021,
+    "aliases": [
+      "Duna: Parte 1",
+      "Dune: Part One"
+    ],
+    "frames": [
+      "xS0g3s4blsiPmtpjjb7chFjI1ip.jpg",
+      "zRKQW58MBEY078AxkHxEJzUskCl.jpg",
+      "qVgZu5BTx6pu4owCvVOm4zjTfOi.jpg",
+      "1httqnYN5eMIkuxibCkRzInUvoS.jpg",
+      "jKhsC3yguywiKF1XA6OlslFhlwT.jpg",
+      "lzWHmYdfeFiMIY4JaMmtR7GEli3.jpg"
+    ]
+  },
+  {
+    "id": 1000837,
+    "title": "Ainda Estou Aqui",
+    "originalTitle": "I'm Still Here",
+    "year": 2024,
+    "aliases": [],
+    "frames": [
+      "3q91N3fFaEkFLhWyvcMBaF3wge0.jpg",
+      "m6Y0Y1WFhMRZuTqoTsNVBOCUU3N.jpg",
+      "yUOJzi3qIeXCAK1nZ7el7DUBDNV.jpg",
+      "lcrOHOrBmSBc0zxV7RGGYmQzqgU.jpg",
+      "txuLigJucFLp5c7CTzO6KANCwSE.jpg",
+      "j9uruwRe9qM8RnP758dF7ISB8Bj.jpg"
+    ]
+  },
+  {
+    "id": 361743,
+    "title": "Top Gun: Maverick",
+    "originalTitle": "Top Gun: Maverick",
+    "year": 2022,
+    "aliases": [],
+    "frames": [
+      "iAbOct7YmhhR10E6kAECd7dtQQP.jpg",
+      "o3JObZEzsSNZz1jIyzDZq7i8UJz.jpg",
+      "f0GJgpzXlCXeY771LuVKfoj4VmW.jpg",
+      "uNOttb1gGzEPg280Sza3rdC2hxZ.jpg",
+      "kBSSbN1sOiJtXjAGVZXxHJR9Kox.jpg",
+      "5AcP07WJl1VZbnloLZrMVgYjR2s.jpg"
+    ]
+  }
 ]

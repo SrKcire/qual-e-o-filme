@@ -3,6 +3,7 @@ import { PrimaryButton, ResultPanel } from '../components/ResultPanel'
 import { Round } from '../components/Round'
 import { MAX_ATTEMPTS, movieById, movies, scoreFor, shuffle, type Guess } from '../lib/game'
 import { load, save } from '../lib/storage'
+import { LiveMode } from './LiveMode'
 
 interface Player {
   name: string
@@ -28,7 +29,7 @@ const MAX_PLAYERS = 8
 const total = (p: Player) => p.scores.reduce((a, b) => a + b, 0)
 
 /** Vários jogadores revezando no mesmo aparelho, cada um com o seu filme */
-export function PartyMode() {
+function LocalParty() {
   const [party, setParty] = useState<Party | null>(() => {
     const saved = load<Party | null>(PARTY_KEY, null)
     // descarta partida salva se algum filme saiu do catálogo
@@ -261,6 +262,42 @@ function Podium({ party, onRematch, onNew }: { party: Party; onRematch: () => vo
         </button>
         <PrimaryButton onClick={onRematch}>Revanche</PrimaryButton>
       </div>
+    </div>
+  )
+}
+
+type PartyKind = 'local' | 'online'
+const KIND_KEY = 'qef:party-kind'
+
+/** Festa: revezando no mesmo aparelho ou numa sala online, cada um no seu celular */
+export function PartyMode({ roomCode }: { roomCode: string | null }) {
+  const [kind, setKind] = useState<PartyKind>(() => (roomCode ? 'online' : load<PartyKind>(KIND_KEY, 'online')))
+
+  function choose(k: PartyKind) {
+    setKind(k)
+    save(KIND_KEY, k)
+  }
+
+  return (
+    <div className="flex flex-col gap-5">
+      <div className="mx-auto flex w-full max-w-md rounded-xl bg-zinc-900 p-1 text-sm ring-1 ring-zinc-800" role="tablist">
+        {([
+          ['online', '🌐 Sala online'],
+          ['local', '📱 Mesmo aparelho'],
+        ] as const).map(([k, label]) => (
+          <button
+            key={k}
+            type="button"
+            role="tab"
+            aria-selected={kind === k}
+            onClick={() => choose(k)}
+            className={`flex-1 rounded-lg py-2 font-semibold ${kind === k ? 'bg-zinc-700 text-zinc-100' : 'text-zinc-400 hover:text-zinc-100'}`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      {kind === 'online' ? <LiveMode initialCode={roomCode} /> : <LocalParty />}
     </div>
   )
 }

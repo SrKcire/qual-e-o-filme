@@ -12,8 +12,14 @@ Acertou no 1º frame = **6 pontos**, no 2º = 5, …, no 6º = 1. Errou tudo = 0
 - **📅 Filme do Dia** — um filme por dia, igual para todo mundo (como o Wordle). Guarda sequência de
   vitórias, recorde e a distribuição dos seus resultados. Vira à meia-noite no horário de quem joga.
 - **🎞️ Livre** — filmes em ordem aleatória, sem repetir até passar pelo catálogo inteiro.
-- **🎉 Festa** — de 2 a 8 jogadores revezando no mesmo aparelho, cada um com o seu filme por rodada.
-  Uma tela de "passe o aparelho" esconde o frame na troca de jogador. No fim, pódio e revanche.
+- **🎉 Festa**, em dois formatos:
+  - **🌐 Sala online** — cada um no seu celular, todos vendo o mesmo frame ao mesmo tempo. Quem cria a sala
+    recebe um código de 4 letras (ou link `?sala=CODIGO`); não precisa de conta para entrar. Um frame novo
+    aparece a cada 10–30 s; acertar no 1º frame vale 6 pontos, e quem acerta primeiro ganha +1 ⚡. Chute
+    errado bloqueia até o próximo frame. Funciona com o Realtime do Supabase (broadcast + presença), sem
+    tabelas: o aparelho do anfitrião controla a partida — se ele sair, a sala fecha.
+  - **📱 Mesmo aparelho** — de 2 a 8 jogadores revezando, cada um com o seu filme por rodada. Uma tela de
+    "passe o aparelho" esconde o frame na troca de jogador. No fim, pódio e revanche.
 
 O progresso e as estatísticas ficam salvos no navegador (`localStorage`).
 

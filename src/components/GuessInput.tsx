@@ -3,10 +3,12 @@ import { normalize, stripYear, suggestionPool } from '../lib/game'
 
 interface Props {
   onGuess: (text: string) => void
-  onSkip: () => void
+  /** Sem onSkip, o botão Pular não aparece (ex.: sala ao vivo) */
+  onSkip?: () => void
+  disabled?: boolean
 }
 
-export function GuessInput({ onGuess, onSkip }: Props) {
+export function GuessInput({ onGuess, onSkip, disabled = false }: Props) {
   const [text, setText] = useState('')
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(0)
@@ -19,7 +21,7 @@ export function GuessInput({ onGuess, onSkip }: Props) {
 
   function submit(value: string) {
     const guess = stripYear(value).trim()
-    if (!guess) return
+    if (!guess || disabled) return
     onGuess(guess)
     setText('')
     setOpen(false)
@@ -53,6 +55,7 @@ export function GuessInput({ onGuess, onSkip }: Props) {
           value={text}
           placeholder="Qual é o filme?"
           autoComplete="off"
+          disabled={disabled}
           onChange={(e) => {
             setText(e.target.value)
             setOpen(true)
@@ -61,7 +64,7 @@ export function GuessInput({ onGuess, onSkip }: Props) {
           onFocus={() => setOpen(true)}
           onBlur={() => setOpen(false)}
           onKeyDown={onKeyDown}
-          className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-zinc-100 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-500 focus:ring-2 focus:ring-amber-400"
+          className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-zinc-100 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-500 focus:ring-2 focus:ring-amber-400 disabled:opacity-50"
         />
         {open && suggestions.length > 0 && (
           <ul className="absolute bottom-full z-10 mb-1 w-full overflow-hidden rounded-lg bg-zinc-900 shadow-xl ring-1 ring-zinc-700">
@@ -88,17 +91,20 @@ export function GuessInput({ onGuess, onSkip }: Props) {
         <button
           type="button"
           onClick={() => submit(text)}
-          className="flex-1 rounded-lg bg-amber-400 px-5 py-3 font-semibold text-zinc-950 hover:bg-amber-300 sm:flex-none"
+          disabled={disabled}
+          className="flex-1 rounded-lg bg-amber-400 px-5 py-3 font-semibold text-zinc-950 hover:bg-amber-300 disabled:opacity-50 sm:flex-none"
         >
           Chutar
         </button>
-        <button
-          type="button"
-          onClick={onSkip}
-          className="flex-1 rounded-lg bg-zinc-800 px-5 py-3 font-semibold text-zinc-200 hover:bg-zinc-700 sm:flex-none"
-        >
-          Pular
-        </button>
+        {onSkip && (
+          <button
+            type="button"
+            onClick={onSkip}
+            className="flex-1 rounded-lg bg-zinc-800 px-5 py-3 font-semibold text-zinc-200 hover:bg-zinc-700 sm:flex-none"
+          >
+            Pular
+          </button>
+        )}
       </div>
     </div>
   )

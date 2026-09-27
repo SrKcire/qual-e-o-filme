@@ -11,6 +11,7 @@ import { ProfilePage } from './pages/ProfilePage'
 import { FriendsPage } from './pages/FriendsPage'
 import { useFriends } from './friends/FriendsProvider'
 import { takeInviteFromUrl } from './lib/friends'
+import { normalizeRoomCode } from './live/protocol'
 
 const MODES = [
   { id: 'daily', label: 'Filme do Dia', icon: '📅' },
@@ -23,12 +24,25 @@ type View = 'game' | 'login' | 'profile' | 'friends'
 
 const MODE_KEY = 'qef:mode'
 
+function takeRoomFromUrl(): string | null {
+  const params = new URLSearchParams(location.search)
+  const code = params.get('sala')
+  if (!code) return null
+  params.delete('sala')
+  const qs = params.toString()
+  history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : '') + location.hash)
+  return normalizeRoomCode(code) || null
+}
+
 export default function App() {
   const { session, profile, loading, recovering, finishRecovery } = useAuth()
   const [view, setView] = useState<View>('game')
   // convite por link (?amigo=apelido): abre a página de amigos quando a pessoa estiver logada
   const [invite] = useState(takeInviteFromUrl)
+  // link de sala ao vivo (?sala=CODIGO): abre a Festa já com o código
+  const [roomCode] = useState(takeRoomFromUrl)
   const [mode, setMode] = useState<Mode>(() => {
+    if (roomCode) return 'party'
     const saved = load<string>(MODE_KEY, 'daily')
     return MODES.some((m) => m.id === saved) ? (saved as Mode) : 'daily'
   })
@@ -111,7 +125,7 @@ export default function App() {
           <div key={dataVersion}>
             {mode === 'daily' && <DailyMode />}
             {mode === 'free' && <FreeMode />}
-            {mode === 'party' && <PartyMode />}
+            {mode === 'party' && <PartyMode roomCode={roomCode} />}
           </div>
         )}
       </main>

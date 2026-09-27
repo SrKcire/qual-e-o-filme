@@ -18,6 +18,9 @@ interface AuthState {
   /** Carregando sessão ou perfil */
   loading: boolean
   refreshProfile: () => Promise<void>
+  /** Chegou pelo link de redefinir senha: precisa escolher uma senha nova */
+  recovering: boolean
+  finishRecovery: () => void
   signOut: () => Promise<void>
 }
 
@@ -44,6 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
+  const [recovering, setRecovering] = useState(false)
   const userId = session?.user.id
 
   useEffect(() => {
@@ -51,7 +55,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setSession(data.session)
       if (!data.session) setLoading(false)
     })
-    const { data } = supabase.auth.onAuthStateChange((_event, s) => {
+    const { data } = supabase.auth.onAuthStateChange((event, s) => {
+      if (event === 'PASSWORD_RECOVERY') setRecovering(true)
       // só troca a sessão quando muda o usuário (o refresh do token não recarrega o perfil)
       setSession((prev) => (prev?.user.id === s?.user.id && prev?.access_token === s?.access_token ? prev : s))
       if (!s) {
@@ -85,6 +90,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ session, profile, loading, refreshProfile, signOut }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ session, profile, loading, refreshProfile, signOut, recovering, finishRecovery: () => setRecovering(false) }}>{children}</AuthContext.Provider>
   )
 }

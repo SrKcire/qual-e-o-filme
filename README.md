@@ -19,7 +19,7 @@ O progresso e as estatísticas ficam salvos no navegador (`localStorage`).
 
 ## Contas e perfis
 
-Jogar não exige conta. Quem entra (link de acesso por e-mail, sem senha) ganha:
+Jogar não exige conta. Dá para entrar com **Google** ou criar conta com **e-mail e senha** (com "esqueci minha senha"). Quem entra ganha:
 
 - **Perfil** com nome, sobrenome, apelido público (`@apelido`) e **avatar** montado no editor
   (4 estilos do [DiceBear](https://www.dicebear.com): Aventureiro, Rabisco, Cartoon e Pixel).

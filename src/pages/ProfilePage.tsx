@@ -26,9 +26,14 @@ function ProfileForm({ onDone }: { onDone: () => void }) {
   const { session, profile, refreshProfile, signOut } = useAuth()
   const creating = !profile
   const email = session?.user.email ?? ''
+  // quem entrou com Google já traz o nome da conta
+  const meta = (session?.user.user_metadata ?? {}) as Record<string, string | undefined>
+  const fullName = (meta.full_name ?? meta.name ?? '').trim()
+  const metaFirst = meta.given_name ?? fullName.split(' ')[0] ?? ''
+  const metaLast = meta.family_name ?? fullName.split(' ').slice(1).join(' ')
 
-  const [firstName, setFirstName] = useState(profile?.first_name ?? '')
-  const [lastName, setLastName] = useState(profile?.last_name ?? '')
+  const [firstName, setFirstName] = useState(profile?.first_name ?? metaFirst.slice(0, 40))
+  const [lastName, setLastName] = useState(profile?.last_name ?? metaLast.slice(0, 60))
   const [username, setUsername] = useState(profile?.username ?? toUsername(email.split('@')[0]))
   const [avatar, setAvatar] = useState<AvatarConfig>(() => profile?.avatar ?? randomAvatar())
   const [availability, setAvailability] = useState<Availability>('idle')

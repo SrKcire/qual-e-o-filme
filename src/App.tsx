@@ -6,7 +6,7 @@ import { load, save } from './lib/storage'
 import { DailyMode } from './modes/DailyMode'
 import { FreeMode } from './modes/FreeMode'
 import { PartyMode } from './modes/PartyMode'
-import { LoginPage } from './pages/LoginPage'
+import { LoginPage, NewPasswordPage } from './pages/LoginPage'
 import { ProfilePage } from './pages/ProfilePage'
 
 const MODES = [
@@ -21,7 +21,7 @@ type View = 'game' | 'login' | 'profile'
 const MODE_KEY = 'qef:mode'
 
 export default function App() {
-  const { session, profile, loading } = useAuth()
+  const { session, profile, loading, recovering, finishRecovery } = useAuth()
   const [view, setView] = useState<View>('game')
   const [mode, setMode] = useState<Mode>(() => {
     const saved = load<string>(MODE_KEY, 'daily')
@@ -86,9 +86,13 @@ export default function App() {
       </header>
 
       <main>
-        {screen === 'login' && <LoginPage onCancel={() => setView('game')} />}
-        {screen === 'profile' && <ProfilePage key={profile?.id ?? 'new'} onDone={() => setView('game')} />}
-        {screen === 'game' && (
+        {recovering ? (
+          <NewPasswordPage onDone={finishRecovery} />
+        ) : (
+          screen === 'login' && <LoginPage onCancel={() => setView('game')} />
+        )}
+        {!recovering && screen === 'profile' && <ProfilePage key={profile?.id ?? 'new'} onDone={() => setView('game')} />}
+        {!recovering && screen === 'game' && (
           <div key={dataVersion}>
             {mode === 'daily' && <DailyMode />}
             {mode === 'free' && <FreeMode />}

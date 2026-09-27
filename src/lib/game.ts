@@ -19,6 +19,9 @@ export interface Guess {
 
 export const MAX_ATTEMPTS = 6
 
+/** Tentativa (1-based) a partir da qual o campo sugere nomes de filmes; antes disso, facilitaria demais */
+export const SUGGESTIONS_FROM_ATTEMPT = 4
+
 export const movies: Movie[] = moviesData
 
 export function frameUrl(path: string, size: 'w300' | 'w780' | 'w1280' = 'w1280') {

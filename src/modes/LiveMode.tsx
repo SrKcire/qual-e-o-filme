@@ -420,6 +420,7 @@ function Playing(props: {
               )}
             </p>
             <GuessInput
+              attempt={revealed}
               disabled={!canGuess}
               onGuess={(text) => {
                 setPending(true)

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import { Film, Search, SkipForward } from 'lucide-react'
-import { normalize, stripYear, suggestionPool } from '../lib/game'
+import { SUGGESTIONS_FROM_ATTEMPT, normalize, stripYear, suggestionPool } from '../lib/game'
 
 interface Props {
   onGuess: (text: string) => void
@@ -9,9 +9,11 @@ interface Props {
   disabled?: boolean
   /** Muda a cada chute errado: o campo "treme" */
   wrongCount?: number
+  /** Tentativa atual (1-based): as sugestões só aparecem a partir de SUGGESTIONS_FROM_ATTEMPT */
+  attempt: number
 }
 
-export function GuessInput({ onGuess, onSkip, disabled = false, wrongCount = 0 }: Props) {
+export function GuessInput({ onGuess, onSkip, disabled = false, wrongCount = 0, attempt }: Props) {
   const [text, setText] = useState('')
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(0)
@@ -26,11 +28,12 @@ export function GuessInput({ onGuess, onSkip, disabled = false, wrongCount = 0 }
     if (wrongCount > 0) setShaking(true)
   }, [wrongCount])
 
+  const suggestionsEnabled = attempt >= SUGGESTIONS_FROM_ATTEMPT
   const suggestions = useMemo(() => {
     const q = normalize(text)
-    if (q.length < 2) return []
+    if (!suggestionsEnabled || q.length < 2) return []
     return suggestionPool.filter((s) => normalize(s).includes(q)).slice(0, 8)
-  }, [text])
+  }, [text, suggestionsEnabled])
 
   function submit(value: string) {
     const guess = stripYear(value).trim()

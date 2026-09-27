@@ -52,6 +52,7 @@ export function Round({ movie, guesses, onGuess, result }: Props) {
             <AttemptPips guesses={guesses} finished={finished} />
           </div>
           <GuessInput
+            attempt={guesses.length + 1}
             wrongCount={guesses.filter((g) => g.result === 'wrong').length}
             onGuess={(text) => guess({ text, result: isCorrectGuess(movie, text) ? 'correct' : 'wrong' })}
             onSkip={() => guess({ text: '', result: 'skip' })}

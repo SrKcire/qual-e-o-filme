@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react'
+import { Check, Share2 } from 'lucide-react'
 import type { Movie } from '../lib/game'
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
   children?: ReactNode
 }
 
+/** Resultado da rodada em forma de ingresso de cinema: canhoto com os pontos + filme */
 export function ResultPanel({ movie, score, shareText, winMessage, children }: Props) {
   const [copied, setCopied] = useState(false)
   const won = score > 0
@@ -32,19 +34,50 @@ export function ResultPanel({ movie, score, shareText, winMessage, children }: P
   }
 
   return (
-    <div className={`rounded-xl p-5 text-center ring-1 ${won ? 'bg-emerald-950/40 ring-emerald-700' : 'bg-red-950/40 ring-red-800'}`}>
-      <p className="text-lg font-bold">{won ? (winMessage ?? 'Acertou!') + ` +${pts}` : 'Não foi dessa vez…'}</p>
-      <p className="mt-1 text-zinc-300">
-        {won ? 'O filme era' : 'A resposta era'} <strong className="text-amber-300">{movie.title}</strong> ({movie.year})
-        {movie.originalTitle !== movie.title && <span className="text-zinc-500"> · {movie.originalTitle}</span>}
-      </p>
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-        {shareText && (
-          <button type="button" onClick={share} className="rounded-lg bg-zinc-800 px-4 py-2 font-semibold hover:bg-zinc-700">
-            {copied ? 'Copiado!' : 'Compartilhar'}
-          </button>
-        )}
-        {children}
+    <div className="relative flex overflow-hidden rounded-2xl shadow-[0_24px_48px_-24px_rgb(0_0_0/0.9)]">
+      {/* canhoto */}
+      <div
+        className={`flex w-24 shrink-0 flex-col items-center justify-center gap-0.5 sm:w-32 ${
+          won ? 'bg-gradient-to-b from-amber-300 to-amber-500 text-zinc-950' : 'bg-gradient-to-b from-curtain-500 to-curtain-600 text-white'
+        }`}
+      >
+        <span className="font-display text-5xl leading-none sm:text-6xl">{won ? `+${score}` : '0'}</span>
+        <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-70">{score === 1 ? 'ponto' : 'pontos'}</span>
+      </div>
+
+      {/* picote entre o canhoto e o ingresso, com os recortes em cima e embaixo */}
+      <div className="relative w-0 border-l-2 border-dashed border-zinc-950/60">
+        <span className="absolute -top-3 -left-3 h-6 w-6 rounded-full bg-zinc-950" />
+        <span className="absolute -bottom-3 -left-3 h-6 w-6 rounded-full bg-zinc-950" />
+      </div>
+
+      <div className="flex min-w-0 flex-1 flex-col gap-3 bg-zinc-900 px-5 py-5 sm:px-6">
+        <div>
+          <p className={`text-xs font-bold tracking-[0.18em] uppercase ${won ? 'text-emerald-400' : 'text-curtain-500'}`}>
+            {won ? (winMessage ?? 'Acertou!') + ` +${pts}` : 'Não foi dessa vez…'}
+          </p>
+          <p className="mt-1 text-sm text-zinc-400">{won ? 'O filme era' : 'A resposta era'}</p>
+          <strong className="block font-display text-3xl leading-tight tracking-wide text-amber-300 sm:text-4xl">
+            {movie.title}
+          </strong>
+          <p className="text-sm text-zinc-500">
+            {movie.year}
+            {movie.originalTitle !== movie.title && ` · ${movie.originalTitle}`}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          {shareText && (
+            <button
+              type="button"
+              onClick={share}
+              className="flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/10"
+            >
+              {copied ? <Check size={15} aria-hidden /> : <Share2 size={15} aria-hidden />}
+              {copied ? 'Copiado!' : 'Compartilhar'}
+            </button>
+          )}
+          {children}
+        </div>
       </div>
     </div>
   )
@@ -52,12 +85,7 @@ export function ResultPanel({ movie, score, shareText, winMessage, children }: P
 
 export function PrimaryButton({ onClick, children }: { onClick: () => void; children: ReactNode }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      autoFocus
-      className="rounded-lg bg-amber-400 px-4 py-2 font-semibold text-zinc-950 hover:bg-amber-300"
-    >
+    <button type="button" onClick={onClick} autoFocus className="btn-gold px-5 py-2 text-sm">
       {children}
     </button>
   )

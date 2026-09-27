@@ -3,9 +3,9 @@ import type { AuthError } from '@supabase/supabase-js'
 import { fetchAuthSettings, redirectUrl, supabase, type AuthSettings } from '../lib/supabase'
 
 const input =
-  'w-full rounded-lg bg-zinc-950 px-4 py-3 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
+  'w-full rounded-xl bg-zinc-950/80 px-4 py-3 ring-1 ring-white/10 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
 const primary =
-  'rounded-lg bg-amber-400 py-3 font-semibold text-zinc-950 hover:bg-amber-300 disabled:opacity-60'
+  'btn-gold py-3'
 const link = 'text-sm text-zinc-400 underline hover:text-zinc-200'
 
 const MIN_PASSWORD = 8
@@ -102,9 +102,9 @@ export function LoginPage({ onCancel }: { onCancel: () => void }) {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-5 rounded-xl bg-zinc-900 p-6 ring-1 ring-zinc-800">
+    <div className="mx-auto flex w-full max-w-md flex-col gap-5 card p-6">
       <div>
-        <h2 className="text-xl font-bold">{titles[mode]}</h2>
+        <h2 className="font-display text-4xl tracking-wide">{titles[mode]}</h2>
         <p className="mt-1 text-sm text-zinc-400">
           {mode === 'forgot'
             ? 'Informe o e-mail da conta e enviaremos um link para criar uma nova senha.'
@@ -222,9 +222,9 @@ export function NewPasswordPage({ onDone }: { onDone: () => void }) {
   }
 
   return (
-    <form onSubmit={submit} className="mx-auto flex w-full max-w-md flex-col gap-4 rounded-xl bg-zinc-900 p-6 ring-1 ring-zinc-800">
+    <form onSubmit={submit} className="mx-auto flex w-full max-w-md flex-col gap-4 card p-6">
       <div>
-        <h2 className="text-xl font-bold">Nova senha</h2>
+        <h2 className="font-display text-4xl tracking-wide">Nova senha</h2>
         <p className="mt-1 text-sm text-zinc-400">Escolha a nova senha da sua conta.</p>
       </div>
       <input

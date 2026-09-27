@@ -16,14 +16,14 @@ import {
 } from '../lib/friends'
 
 const btn = 'rounded-lg px-3 py-1.5 text-sm font-semibold disabled:opacity-50'
-const btnPrimary = `${btn} bg-amber-400 text-zinc-950 hover:bg-amber-300`
-const btnGhost = `${btn} bg-zinc-800 text-zinc-200 hover:bg-zinc-700`
+const btnPrimary = `${btn} btn-gold`
+const btnGhost = `${btn} bg-white/5 ring-1 ring-white/10 text-zinc-200 hover:bg-white/10`
 
 function Card({ title, children, right }: { title: string; children: ReactNode; right?: ReactNode }) {
   return (
-    <section className="flex flex-col gap-3 rounded-xl bg-zinc-900 p-4 ring-1 ring-zinc-800 sm:p-5">
+    <section className="flex flex-col gap-3 card p-4 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-bold">{title}</h2>
+        <h2 className="font-display text-2xl tracking-wide">{title}</h2>
         {right}
       </div>
       {children}
@@ -201,7 +201,7 @@ export function FriendsPage({ invite }: { invite: string | null }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar pelo apelido"
             aria-label="Buscar pelo apelido"
-            className="w-full rounded-lg bg-zinc-950 py-2.5 pr-3 pl-7 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400"
+            className="w-full rounded-xl bg-zinc-950/80 py-2.5 pr-3 pl-7 ring-1 ring-white/10 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400"
           />
         </div>
         {query.replace(/^@/, '').trim().length >= 2 &&

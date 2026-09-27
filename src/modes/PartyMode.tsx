@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Globe, Smartphone } from 'lucide-react'
 import { PrimaryButton, ResultPanel } from '../components/ResultPanel'
 import { Round } from '../components/Round'
 import { MAX_ATTEMPTS, movieById, movies, scoreFor, shuffle, type Guess } from '../lib/game'
@@ -76,9 +77,9 @@ function Setup({ onStart }: { onStart: (names: string[], rounds: number) => void
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-5 rounded-xl bg-zinc-900 p-5 ring-1 ring-zinc-800">
+    <div className="mx-auto flex w-full max-w-md flex-col gap-5 card p-5">
       <div>
-        <h2 className="text-lg font-bold">Modo Festa 🎉</h2>
+        <h2 className="font-display text-3xl tracking-wide">Mesmo aparelho</h2>
         <p className="text-sm text-zinc-400">
           Cada jogador recebe um filme diferente por rodada, na sua vez. Quem somar mais pontos no fim vence.
         </p>
@@ -94,7 +95,7 @@ function Setup({ onStart }: { onStart: (names: string[], rounds: number) => void
               maxLength={20}
               placeholder={`Jogador ${i + 1}`}
               onChange={(e) => setNames(names.map((n, j) => (j === i ? e.target.value : n)))}
-              className="flex-1 rounded-lg bg-zinc-950 px-3 py-2 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400"
+              className="flex-1 rounded-xl bg-zinc-950/80 px-3 py-2 ring-1 ring-white/10 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400"
             />
             {names.length > 2 && (
               <button
@@ -124,7 +125,7 @@ function Setup({ onStart }: { onStart: (names: string[], rounds: number) => void
         <select
           value={safeRounds}
           onChange={(e) => setRounds(Number(e.target.value))}
-          className="rounded-lg bg-zinc-950 px-3 py-2 ring-1 ring-zinc-700"
+          className="rounded-xl bg-zinc-950/80 px-3 py-2 ring-1 ring-white/10"
         >
           {Array.from({ length: maxRounds }, (_, i) => i + 1).map((n) => (
             <option key={n} value={n}>
@@ -134,7 +135,7 @@ function Setup({ onStart }: { onStart: (names: string[], rounds: number) => void
         </select>
       </label>
 
-      <button type="button" onClick={start} className="rounded-lg bg-amber-400 py-3 font-semibold text-zinc-950 hover:bg-amber-300">
+      <button type="button" onClick={start} className="btn-gold py-3">
         Começar partida
       </button>
     </div>
@@ -147,7 +148,7 @@ function Scoreboard({ players, current }: { players: Player[]; current?: number 
       {players.map((p, i) => (
         <li
           key={i}
-          className={`rounded-lg px-3 py-1.5 text-sm ring-1 ${i === current ? 'bg-amber-400/15 ring-amber-400 text-amber-200' : 'bg-zinc-900 ring-zinc-800 text-zinc-300'}`}
+          className={`rounded-lg px-3 py-1.5 text-sm ring-1 ${i === current ? 'bg-amber-400/15 ring-amber-400 text-amber-200' : 'bg-white/5 ring-white/10 text-zinc-300'}`}
         >
           {p.name} <strong className="ml-1 text-zinc-100">{total(p)}</strong>
         </li>
@@ -208,9 +209,9 @@ function Playing({ party, setParty, onQuit }: PlayingProps) {
           }
         />
       ) : (
-        <div className="flex flex-col items-center gap-4 rounded-xl bg-zinc-900 px-5 py-12 text-center ring-1 ring-zinc-800">
+        <div className="flex flex-col items-center gap-4 card px-5 py-12 text-center">
           <p className="text-sm uppercase tracking-widest text-zinc-500">Passe o aparelho para</p>
-          <p className="text-4xl font-black text-amber-400">{player.name}</p>
+          <p className="font-display text-6xl tracking-wide text-amber-400">{player.name}</p>
           <p className="text-sm text-zinc-400">
             {MAX_ATTEMPTS} frames, até {MAX_ATTEMPTS} pontos. Boa sorte!
           </p>
@@ -237,7 +238,7 @@ function Podium({ party, onRematch, onNew }: { party: Party; onRematch: () => vo
     <div className="mx-auto flex w-full max-w-md flex-col gap-5">
       <div className="text-center">
         <p className="text-5xl">🏆</p>
-        <h2 className="mt-2 text-2xl font-black">
+        <h2 className="mt-2 font-display text-4xl tracking-wide">
           {winners.length > 1 ? `Empate entre ${winners.map((w) => w.name).join(' e ')}!` : `${winners[0].name} venceu!`}
         </h2>
         <p className="text-sm text-zinc-400">
@@ -247,17 +248,17 @@ function Podium({ party, onRematch, onNew }: { party: Party; onRematch: () => vo
 
       <ol className="flex flex-col gap-2">
         {ranking.map((p, i) => (
-          <li key={i} className="flex items-center gap-3 rounded-xl bg-zinc-900 px-4 py-3 ring-1 ring-zinc-800">
+          <li key={i} className="flex items-center gap-3 card px-4 py-3">
             <span className="w-8 text-center text-xl">{medals[place(p)] ?? `${place(p) + 1}º`}</span>
             <span className="flex-1 font-semibold">{p.name}</span>
             <span className="text-xs text-zinc-500">{p.scores.join(' + ')}</span>
-            <span className="w-10 text-right text-lg font-black text-amber-300">{total(p)}</span>
+            <span className="w-10 text-right font-display text-3xl text-amber-300">{total(p)}</span>
           </li>
         ))}
       </ol>
 
       <div className="flex justify-center gap-2">
-        <button type="button" onClick={onNew} className="rounded-lg bg-zinc-800 px-4 py-2 font-semibold hover:bg-zinc-700">
+        <button type="button" onClick={onNew} className="rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-2 font-semibold hover:bg-white/10">
           Novo jogo
         </button>
         <PrimaryButton onClick={onRematch}>Revanche</PrimaryButton>
@@ -280,19 +281,24 @@ export function PartyMode({ roomCode }: { roomCode: string | null }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="mx-auto flex w-full max-w-md rounded-xl bg-zinc-900 p-1 text-sm ring-1 ring-zinc-800" role="tablist">
-        {([
-          ['online', '🌐 Sala online'],
-          ['local', '📱 Mesmo aparelho'],
-        ] as const).map(([k, label]) => (
+      <div className="card mx-auto flex w-full max-w-md gap-1 p-1 text-sm" role="tablist">
+        {(
+          [
+            ['online', 'Sala online', Globe],
+            ['local', 'Mesmo aparelho', Smartphone],
+          ] as const
+        ).map(([k, label, Icon]) => (
           <button
             key={k}
             type="button"
             role="tab"
             aria-selected={kind === k}
             onClick={() => choose(k)}
-            className={`flex-1 rounded-lg py-2 font-semibold ${kind === k ? 'bg-zinc-700 text-zinc-100' : 'text-zinc-400 hover:text-zinc-100'}`}
+            className={`flex flex-1 items-center justify-center gap-2 rounded-xl py-2 font-semibold transition ${
+              kind === k ? 'bg-white/10 text-zinc-50 ring-1 ring-white/15' : 'text-zinc-400 hover:text-zinc-100'
+            }`}
           >
+            <Icon size={15} strokeWidth={2.2} aria-hidden />
             {label}
           </button>
         ))}

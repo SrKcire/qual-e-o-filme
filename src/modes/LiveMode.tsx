@@ -12,11 +12,11 @@ const GUEST_KEY = 'qef:guest'
 const SETTINGS_KEY = 'qef:live-settings'
 const ROOM_KEY = 'qef:live-room'
 
-const card = 'rounded-xl bg-zinc-900 p-5 ring-1 ring-zinc-800'
+const card = 'card p-5'
 const input =
-  'w-full rounded-lg bg-zinc-950 px-3 py-2.5 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
-const primary = 'rounded-lg bg-amber-400 px-5 py-2.5 font-semibold text-zinc-950 hover:bg-amber-300 disabled:opacity-50'
-const ghost = 'rounded-lg bg-zinc-800 px-4 py-2.5 font-semibold text-zinc-200 hover:bg-zinc-700'
+  'w-full rounded-xl bg-zinc-950/80 px-3 py-2.5 ring-1 ring-white/10 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
+const primary = 'btn-gold px-5 py-2.5'
+const ghost = 'rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-2.5 font-semibold text-zinc-200 hover:bg-white/10'
 
 interface Guest {
   id: string
@@ -131,7 +131,7 @@ function Entry(props: {
             onKeyDown={(e) => e.key === 'Enter' && join()}
             placeholder="CÓDIGO"
             aria-label="Código da sala"
-            className={`${input} text-center font-mono text-xl tracking-[0.4em] uppercase`}
+            className={`${input} text-center font-display text-3xl tracking-[0.4em] uppercase`}
           />
           <button type="button" onClick={join} disabled={!nameOk || code.length !== 4} className={`${primary} whitespace-nowrap`}>
             Entrar na sala
@@ -279,7 +279,7 @@ function PlayerChip({ p, showRound }: { p: LivePlayer; showRound: boolean }) {
           )}
         </span>
       )}
-      <span className="w-8 shrink-0 text-right font-black text-amber-300">{p.score}</span>
+      <span className="w-8 shrink-0 text-right font-display text-2xl text-amber-300">{p.score}</span>
     </li>
   )
 }
@@ -314,7 +314,7 @@ function Lobby({
     <div className="grid gap-4 md:grid-cols-2">
       <div className={`${card} flex flex-col items-center gap-3 text-center`}>
         <p className="text-sm text-zinc-400">Código da sala</p>
-        <p className="font-mono text-5xl font-black tracking-[0.3em] text-amber-400">{code}</p>
+        <p className="font-display text-7xl leading-none tracking-[0.2em] text-amber-400 drop-shadow-[0_0_24px_rgb(247_183_51/0.35)]">{code}</p>
         <button type="button" onClick={share} className={ghost}>
           {copied ? 'Link copiado!' : 'Convidar amigos'}
         </button>
@@ -450,7 +450,7 @@ function Reveal({ state, secondsLeft }: { state: LiveState; secondsLeft: number 
         <FrameViewer frames={state.frames} revealed={state.frames.length} current={state.frames.length - 1} onSelect={() => {}} />
         <div className={`${card} text-center`}>
           <p className="text-sm text-zinc-400">O filme era</p>
-          <p className="text-2xl font-black text-amber-300">{state.answer?.title}</p>
+          <p className="font-display text-4xl tracking-wide text-amber-300">{state.answer?.title}</p>
           <p className="text-sm text-zinc-500">
             {state.answer?.year}
             {state.answer && state.answer.originalTitle !== state.answer.title && ` · ${state.answer.originalTitle}`}
@@ -483,18 +483,18 @@ function Final({ state, isHost, onAgain, onLeave }: { state: LiveState; isHost: 
     <div className="mx-auto flex w-full max-w-md flex-col gap-5">
       <div className="text-center">
         <p className="text-5xl">🏆</p>
-        <h2 className="mt-2 text-2xl font-black">
+        <h2 className="mt-2 font-display text-4xl tracking-wide">
           {winners.length > 1 ? `Empate entre ${winners.map((w) => w.name).join(' e ')}!` : `${winners[0]?.name} venceu!`}
         </h2>
         <p className="text-sm text-zinc-400">{state.settings.rounds} filmes</p>
       </div>
       <ol className="flex flex-col gap-2">
         {ranking.map((p) => (
-          <li key={p.id} className="flex items-center gap-3 rounded-xl bg-zinc-900 px-4 py-3 ring-1 ring-zinc-800">
+          <li key={p.id} className="flex items-center gap-3 card px-4 py-3">
             <span className="w-8 text-center text-xl">{medals[place(p)] ?? `${place(p) + 1}º`}</span>
             <Avatar config={p.avatar} name={p.name} size={32} />
             <span className="flex-1 truncate font-semibold">{p.name}</span>
-            <span className="text-lg font-black text-amber-300">{p.score}</span>
+            <span className="font-display text-3xl text-amber-300">{p.score}</span>
           </li>
         ))}
       </ol>

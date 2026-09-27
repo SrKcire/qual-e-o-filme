@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Dices } from 'lucide-react'
 import {
   AVATAR_STYLES,
   STYLE_IDS,
@@ -17,7 +18,7 @@ interface Props {
   onChange: (config: AvatarConfig) => void
 }
 
-const arrowBtn = 'grid h-8 w-8 place-items-center rounded-lg bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
+const arrowBtn = 'grid h-8 w-8 place-items-center rounded-lg bg-white/5 ring-1 ring-white/10 text-zinc-200 hover:bg-white/10'
 
 export function AvatarEditor({ value, onChange }: Props) {
   // uma amostra fixa de cada estilo para os botões de escolha (estilos já carregados pela página)
@@ -49,9 +50,9 @@ export function AvatarEditor({ value, onChange }: Props) {
         <button
           type="button"
           onClick={() => onChange(randomAvatar(value.style))}
-          className="rounded-lg bg-zinc-800 px-4 py-2 text-sm font-semibold hover:bg-zinc-700"
+          className="flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold ring-1 ring-white/10 hover:bg-white/10"
         >
-          🎲 Aleatório
+          <Dices size={16} aria-hidden /> Aleatório
         </button>
 
         <div className="grid grid-cols-4 gap-2 md:grid-cols-2">

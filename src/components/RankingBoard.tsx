@@ -76,7 +76,7 @@ export function RankingBoard({ period, reloadKey }: Props) {
                   {daysPlayed(r)} {daysPlayed(r) === 1 ? 'dia' : 'dias'}
                 </span>
               )}
-              <span className="w-8 shrink-0 text-right font-black text-amber-300">{hasPlayed ? r.total : ''}</span>
+              <span className="w-8 shrink-0 text-right font-display text-2xl text-amber-300">{hasPlayed ? r.total : ''}</span>
             </li>
           )
         })}

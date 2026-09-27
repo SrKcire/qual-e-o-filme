@@ -5,7 +5,7 @@ import { STYLE_IDS, randomAvatar, useAvatarStyles, type AvatarConfig } from '../
 import { supabase } from '../lib/supabase'
 
 const input =
-  'w-full rounded-lg bg-zinc-950 px-3 py-2.5 ring-1 ring-zinc-700 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
+  'w-full rounded-xl bg-zinc-950/80 px-3 py-2.5 ring-1 ring-white/10 outline-none placeholder:text-zinc-600 focus:ring-2 focus:ring-amber-400'
 
 const USERNAME_RE = /^[a-z0-9_]{3,20}$/
 
@@ -96,9 +96,9 @@ function ProfileForm({ onDone }: { onDone: () => void }) {
   const canSave = firstName.trim().length > 0 && availability === 'available' && !saving
 
   return (
-    <form onSubmit={save} className="flex flex-col gap-6 rounded-xl bg-zinc-900 p-5 ring-1 ring-zinc-800 sm:p-6">
+    <form onSubmit={save} className="flex flex-col gap-6 card p-5 sm:p-6">
       <div>
-        <h2 className="text-xl font-bold">{creating ? 'Crie seu perfil 🎬' : 'Seu perfil'}</h2>
+        <h2 className="font-display text-4xl tracking-wide">{creating ? 'Crie seu perfil' : 'Seu perfil'}</h2>
         <p className="mt-1 text-sm text-zinc-400">
           {creating
             ? 'Monte seu avatar e escolha um apelido. É assim que os outros jogadores vão te ver.'
@@ -156,12 +156,12 @@ function ProfileForm({ onDone }: { onDone: () => void }) {
         <button
           type="submit"
           disabled={!canSave}
-          className="rounded-lg bg-amber-400 px-5 py-2.5 font-semibold text-zinc-950 hover:bg-amber-300 disabled:opacity-50"
+          className="btn-gold px-5 py-2.5"
         >
           {saving ? 'Salvando…' : creating ? 'Criar perfil' : 'Salvar'}
         </button>
         {!creating && (
-          <button type="button" onClick={onDone} className="rounded-lg bg-zinc-800 px-5 py-2.5 font-semibold hover:bg-zinc-700">
+          <button type="button" onClick={onDone} className="rounded-lg bg-white/5 ring-1 ring-white/10 px-5 py-2.5 font-semibold hover:bg-white/10">
             Cancelar
           </button>
         )}
@@ -191,7 +191,7 @@ export function ProfilePage({ onDone }: { onDone: () => void }) {
   const ready = useAvatarStyles(STYLE_IDS)
   if (!ready)
     return (
-      <div className="grid h-64 place-items-center rounded-xl bg-zinc-900 text-sm text-zinc-500 ring-1 ring-zinc-800">
+      <div className="grid h-64 place-items-center card text-sm text-zinc-500">
         Carregando editor de avatar…
       </div>
     )

@@ -3,6 +3,7 @@ import { MAX_ATTEMPTS, frameUrl, isCorrectGuess, roundState, type Guess, type Mo
 import { FrameViewer } from './FrameViewer'
 import { GuessInput } from './GuessInput'
 import { GuessList } from './GuessList'
+import { AttemptPips } from './AttemptPips'
 
 interface Props {
   movie: Movie
@@ -40,18 +41,22 @@ export function Round({ movie, guesses, onGuess, result }: Props) {
       <FrameViewer frames={movie.frames} revealed={revealed} current={viewing} onSelect={setViewing} />
 
       {finished ? (
-        result
+        <div className="animate-pop">{result}</div>
       ) : (
-        <>
-          <p className="text-center text-sm text-zinc-400">
-            Tentativa <strong className="text-zinc-100">{guesses.length + 1}</strong> de {MAX_ATTEMPTS} · vale{' '}
-            <strong className="text-amber-300">{points}</strong> {points === 1 ? 'ponto' : 'pontos'}
-          </p>
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 px-1">
+            <p className="text-sm text-zinc-400">
+              Tentativa <strong className="text-zinc-100">{guesses.length + 1}</strong> de {MAX_ATTEMPTS} · vale{' '}
+              <strong className="text-amber-300">{points}</strong> {points === 1 ? 'ponto' : 'pontos'}
+            </p>
+            <AttemptPips guesses={guesses} finished={finished} />
+          </div>
           <GuessInput
+            wrongCount={guesses.filter((g) => g.result === 'wrong').length}
             onGuess={(text) => guess({ text, result: isCorrectGuess(movie, text) ? 'correct' : 'wrong' })}
             onSkip={() => guess({ text: '', result: 'skip' })}
           />
-        </>
+        </div>
       )}
 
       <GuessList guesses={guesses} />

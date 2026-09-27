@@ -132,8 +132,8 @@ export function DailyMode() {
         }
       />
       {roundState(guesses).finished && profile && (
-        <section className="flex flex-col gap-3 rounded-xl bg-zinc-900 p-4 ring-1 ring-zinc-800">
-          <h2 className="text-sm font-semibold text-zinc-300">Ranking de hoje entre amigos</h2>
+        <section className="flex flex-col gap-3 card p-4">
+          <h2 className="font-display text-2xl tracking-wide">Ranking de hoje entre amigos</h2>
           <RankingBoard period={1} reloadKey={rankingKey} />
         </section>
       )}
@@ -145,14 +145,14 @@ export function DailyMode() {
 function Distribution({ distribution, highlight }: { distribution: number[]; highlight: number }) {
   const max = Math.max(1, ...distribution)
   return (
-    <section className="rounded-xl bg-zinc-900 p-4 ring-1 ring-zinc-800">
-      <h2 className="mb-3 text-sm font-semibold text-zinc-300">Seus resultados no Filme do Dia</h2>
+    <section className="card p-4">
+      <h2 className="mb-3 font-display text-2xl tracking-wide">Seus resultados no Filme do Dia</h2>
       <ul className="space-y-1">
         {[...distribution.keys()].reverse().map((points) => (
           <li key={points} className="flex items-center gap-2 text-sm">
             <span className="w-16 shrink-0 text-right text-zinc-400">{points === 0 ? 'errou' : `${points} ${points === 1 ? 'pt' : 'pts'}`}</span>
             <span
-              className={`rounded px-2 py-0.5 text-right font-semibold ${points === highlight ? 'bg-amber-400 text-zinc-950' : 'bg-zinc-700 text-zinc-100'}`}
+              className={`rounded px-2 py-0.5 text-right font-semibold ${points === highlight ? 'bg-gradient-to-r from-amber-500 to-amber-300 text-zinc-950' : 'bg-white/10 text-zinc-200'}`}
               style={{ width: `${Math.max(8, (distribution[points] / max) * 100)}%` }}
             >
               {distribution[points]}

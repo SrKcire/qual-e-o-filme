@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useAuth } from '../auth/AuthProvider'
+import { RankingBoard } from '../components/RankingBoard'
 import { ResultPanel } from '../components/ResultPanel'
 import { Round } from '../components/Round'
 import { StatsBar } from '../components/StatsBar'
@@ -66,6 +68,9 @@ export function DailyMode() {
     return saved?.day === day ? saved : { day, guesses: [] }
   })
   const [stats, setStats] = useState(() => load(STATS_KEY, emptyStats))
+  const { profile } = useAuth()
+  // recarrega o ranking depois que o resultado de hoje chega ao servidor
+  const [rankingKey, setRankingKey] = useState(0)
 
   // virou o dia com a aba aberta: começa o desafio novo
   const guesses = progress.day === day ? progress.guesses : []
@@ -80,7 +85,7 @@ export function DailyMode() {
     setProgress({ day, guesses: next })
     const { finished, won } = roundState(next)
     if (!finished) return
-    recordDailyResult(day, next)
+    recordDailyResult(day, next).then(() => setRankingKey((k) => k + 1))
     const points = scoreFor(next)
     setStats((s) => {
       const distribution = [...s.distribution]
@@ -126,6 +131,12 @@ export function DailyMode() {
           </ResultPanel>
         }
       />
+      {roundState(guesses).finished && profile && (
+        <section className="flex flex-col gap-3 rounded-xl bg-zinc-900 p-4 ring-1 ring-zinc-800">
+          <h2 className="text-sm font-semibold text-zinc-300">Ranking de hoje entre amigos</h2>
+          <RankingBoard period={1} reloadKey={rankingKey} />
+        </section>
+      )}
       {roundState(guesses).finished && <Distribution distribution={stats.distribution} highlight={score} />}
     </div>
   )

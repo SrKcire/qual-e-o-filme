@@ -27,6 +27,9 @@ Jogar não exige conta. Dá para entrar com **Google** ou criar conta com **e-ma
 - **Estatísticas na nuvem**: ao entrar, os dados do aparelho são somados aos da conta e passam a
   sincronizar entre celular e computador.
 - **Excluir conta** a qualquer momento na tela de perfil (apaga perfil, estatísticas e resultados).
+- **Amigos e ranking** (botão 👥): busca pelo apelido, pedido de amizade com aceite, link de convite
+  (`?amigo=apelido`) e ranking do Filme do Dia entre amigos — hoje, 7 e 30 dias. O ranking mostra pontos
+  e quadradinhos, mas nunca qual era o filme, para não estragar o desafio de quem ainda não jogou.
 
 O backend é o [Supabase](https://supabase.com). A estrutura do banco e as regras de acesso (RLS) ficam em
 [`supabase/migrations/`](supabase/migrations/) e são aplicadas automaticamente pela integração

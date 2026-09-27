@@ -109,9 +109,9 @@ export function clearSyncedData() {
 }
 
 /** Registra o resultado do Filme do Dia (uma vez por dia; repetições são ignoradas) */
-export function recordDailyResult(day: number, guesses: Guess[]) {
+export async function recordDailyResult(day: number, guesses: Guess[]) {
   if (!currentUser || day < 1) return
-  supabase
+  await supabase
     .from('daily_results')
     .upsert(
       {

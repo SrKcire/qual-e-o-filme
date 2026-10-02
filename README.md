@@ -83,7 +83,9 @@ O script busca os filmes, pega 6 frames sem texto e salva no catálogo. Depois v
 à mão, do mais difícil para o mais fácil — e trocar os que forem arte de pôster em vez de cena do filme.
 
 > **Atenção:** o Filme do Dia é sorteado a partir do catálogo. Adicionar ou remover filmes muda a
-> sequência dos próximos dias (o desafio de hoje também pode mudar), então prefira fazer isso de uma vez.
+> sequência dos próximos dias (o desafio de hoje também pode mudar). Para não trocar dias que já foram
+> jogados, acrescente os filmes desses dias em `FIXED_DAYS` ([`src/lib/game.ts`](src/lib/game.ts))
+> antes de mexer no catálogo.
 
 ## Publicação
 

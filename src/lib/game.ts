@@ -116,16 +116,28 @@ export function dailyNumber(now = new Date()) {
 }
 
 /**
+ * Filmes dos dias 1–8, sorteados quando o catálogo tinha 49 filmes. Ficam fixos para
+ * que a ampliação do catálogo não troque o desafio de quem já jogou esses dias.
+ */
+const FIXED_DAYS = [348, 680, 98, 671, 329, 694, 446159, 19995]
+const DAILY_SEED = 0x9e3779b9
+
+/**
  * Todo mundo recebe o mesmo filme no mesmo dia. O catálogo é embaralhado com uma
  * semente por "ciclo", então nenhum filme repete até o catálogo inteiro passar.
+ * O primeiro ciclo depois dos dias fixos pula os filmes que já saíram neles.
  */
 export function dailyMovie(day: number): Movie {
-  const n = movies.length
-  const index = (((day - 1) % n) + n) % n
-  const cycle = Math.floor((day - 1) / n)
+  if (day <= FIXED_DAYS.length) return movieById(FIXED_DAYS[Math.max(day, 1) - 1])!
   const ids = movies.map((m) => m.id).sort((a, b) => a - b)
-  const order = shuffle(ids, seededRandom(0x9e3779b9 ^ cycle))
-  return movieById(order[index])!
+  const firstCycle = ids.filter((id) => !FIXED_DAYS.includes(id))
+  let d = day - FIXED_DAYS.length
+  if (d <= firstCycle.length) return movieById(shuffle(firstCycle, seededRandom(DAILY_SEED))[d - 1])!
+  d -= firstCycle.length
+  const n = ids.length
+  const cycle = Math.floor((d - 1) / n) + 1
+  const order = shuffle(ids, seededRandom(DAILY_SEED ^ cycle))
+  return movieById(order[(d - 1) % n])!
 }
 
 export function msUntilMidnight(now = new Date()) {
